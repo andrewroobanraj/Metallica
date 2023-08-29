@@ -3,6 +3,8 @@ package org.base;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -65,6 +67,10 @@ public class BaseClass {
 	
 	public static void toQuit() {
 		driver.quit();
+	}
+	
+	public static void toClose() {
+		driver.close();
 	}
 	
 	public static void printText(WebElement element) {
@@ -134,6 +140,45 @@ public class BaseClass {
 	driver.switchTo().window(currentWindowHandle1);
 	
     }
+	
+	public void scrollUp() {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0,0)");
+	}
+	
+	public void scroll() {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, 750)");
+	}
+	
+	public void toRefresh() {
+		
+		driver.navigate().refresh();
+	}
+	
+	public void pageNoscroll() {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, 3000)");
+	}
      	
+    public static void newTab() throws AWTException {
+		
+    	robot=new Robot();
+    	
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_T);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyRelease(KeyEvent.VK_T);
+		
+    }
+    
+    public void winHand() {
+    	
+    	 ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+
+         driver.switchTo().window(tabs.get(0));
+         driver.close();
+    	
+    }
 	
 }

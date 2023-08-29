@@ -24,9 +24,10 @@ public class CategoryBrowserPage extends BaseClass{
 	}
 
 	@When("User click the product image")
-	public void user_click_the_product_image() {
+	public void user_click_the_product_image() throws InterruptedException {
 				
 		btnClick(c.getProduct());
+		Thread.sleep(2000);
 	    
 	    btnClick(c.getShop());
 	    	
@@ -75,11 +76,13 @@ public class CategoryBrowserPage extends BaseClass{
 		Thread.sleep(1000);
 
 		btnClick(c.getPageNo2());
+		Thread.sleep(1000);
 
 		pageNoscroll();
 		Thread.sleep(1000);
 
 		btnClick(c.getPageNo3());
+		Thread.sleep(1000);
 		
 		Thread.sleep(1000);
 		pageNoscroll();

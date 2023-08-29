@@ -60,9 +60,6 @@ public class ProductDetailPage extends BaseClass{
 
 	@When("User check the Einstein Product recommendations")
 	public void user_check_the_Einstein_Product_recommendations() throws InterruptedException {
-		
-		productscroll();
-		Thread.sleep(2000);
 			    
 		btnClick(p.getNextSlide());
 		Thread.sleep(3000);
