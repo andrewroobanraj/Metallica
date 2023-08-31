@@ -101,7 +101,7 @@ public class HomePage extends BaseClass{
 	@Then("User back to home page")
 	public void user_back_to_home_page() {
 		
-		pageUrl();
+		System.out.println("Home Page - Done");
 		
 		toQuit();
 	}

@@ -134,16 +134,11 @@ public class HomePagePojo extends BaseClass{
 		}
 		
 		//Click Product 
-		@FindBy(xpath="//a[@title = 'Go to Product: 72 Seasons T-Shirt (Charcoal)']")
+		@FindBy(xpath="//a[@title = 'Go to Product: Band 72 Seasons Tracks T-Shirt']")
 		private WebElement product;
 
 		public WebElement getProduct() {
 			return product;
 		}
-		
-		
-		
-		
-		
 
 }

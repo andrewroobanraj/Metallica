@@ -6,13 +6,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class RegistrationPage extends BaseClass {
-		
+	
+	RegistrationPojo r=new RegistrationPojo();
 	
 	@When("User navigate to registration page")
 	public void user_navigate_to_registration_page() throws InterruptedException {
-		
-		RegistrationPojo r=new RegistrationPojo();
-		
+				
 		btnClick(r.getProfileIcon());
 		Thread.sleep(2000);
 	    btnClick(r.getCreateAccount());
@@ -22,7 +21,6 @@ public class RegistrationPage extends BaseClass {
 	@When("User click apply button without enter values in mandatory fields")
 	public void user_click_apply_button_without_enter_values_in_mandatory_fields() throws InterruptedException {
 		
-		RegistrationPojo r=new RegistrationPojo();
 		Thread.sleep(2000);		
 		btnClick(r.getApplyButton());
 	    
@@ -30,9 +28,7 @@ public class RegistrationPage extends BaseClass {
 
 	@When("User enter values in all the fields")
 	public void user_enter_values_in_all_the_fields() throws InterruptedException {
-		
-		RegistrationPojo r=new RegistrationPojo();
-		
+				
 		fill(r.getFirstName(), "Test");
 		
 		fill(r.getLastName(), "User");
@@ -63,9 +59,7 @@ public class RegistrationPage extends BaseClass {
 	
 	@When("User enter invalid values in the fields")
 	public void user_enter_invalid_values_in_the_fields() throws InterruptedException {
-		
-		RegistrationPojo r=new RegistrationPojo();
-		
+				
 		r.scrollDown();
 		
 		fieldClear(r.getConfirmPassword());
@@ -93,9 +87,7 @@ public class RegistrationPage extends BaseClass {
 
 	@When("User click apply button")
 	public void user_click_apply_button() throws InterruptedException {
-		
-		RegistrationPojo r=new RegistrationPojo();
-		
+				
 		btnClick(r.getApplyButton());
 		Thread.sleep(2000);
 		
@@ -105,7 +97,7 @@ public class RegistrationPage extends BaseClass {
 	@Then("User is in registration page")
 	public void user_is_in_registration_page() {
 	   
-		pageUrl();
+		System.out.println("Registration Page - Done");
 		
 		toQuit();
 		

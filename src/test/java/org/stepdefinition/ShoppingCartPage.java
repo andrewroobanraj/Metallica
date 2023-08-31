@@ -139,8 +139,8 @@ public class ShoppingCartPage extends BaseClass{
 		btnClick(l.getLoginButton());
 		
 		btnClick(h.getCartIcon());
-		
 	    Thread.sleep(2000);
+	    System.out.println("Shopping Cart Page - Done");
 	    
 	    toQuit();		
 	    

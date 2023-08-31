@@ -6,7 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources",glue="org.stepdefinition" ,tags = "@shoppingcartpage" )
+@CucumberOptions(features="src\\test\\resources",glue="org.stepdefinition")
 public class TestRunner {
 
 }
+

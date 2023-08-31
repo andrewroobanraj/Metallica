@@ -8,10 +8,12 @@ import io.cucumber.java.en.When;
 
 public class MyAccountPage extends BaseClass{
 	
+	MyAccountPagePojo a=new MyAccountPagePojo();
+	LoginPojo l=new LoginPojo();
+
+	
 	@When("User navigate to my account page")
 	public void user_navigate_to_my_account_page() throws InterruptedException {
-		
-		LoginPojo l=new LoginPojo();
 		
 		btnClick(l.getProfileIcon());
 	    Thread.sleep(2000);
@@ -27,7 +29,6 @@ public class MyAccountPage extends BaseClass{
 	@When("User click all the links in my account page")
 	public void user_click_all_the_links_in_my_account_page() throws InterruptedException {
 		
-		MyAccountPagePojo a=new MyAccountPagePojo();
 		
 		btnClick(a.getPersonalInfo());
 	    Thread.sleep(1000);
@@ -66,15 +67,15 @@ public class MyAccountPage extends BaseClass{
 
 	    btnClick(a.getVinylClub());
 	    Thread.sleep(1000);
-	    
-	    btnClick(a.getMyAccount());
-	    
+	    	    
 	}
 
 	@Then("User back to My Account page")
 	public void user_back_to_My_Account_page() {
 		
-		pageUrl();
+		btnClick(a.getMyAccount());
+		System.out.println("My Account Page - Done");
+		
 		toQuit();
 			
 	}

@@ -94,7 +94,7 @@ public class CategoryBrowserPage extends BaseClass{
 		
 		btnClick(c.getViewAll());
 		Thread.sleep(2000);
-		System.out.println("Category Browser Page : DONE");
+		System.out.println("Category Browser Page - Done");
 		toQuit();
 	    
 	}

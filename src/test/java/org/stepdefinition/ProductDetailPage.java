@@ -79,7 +79,7 @@ public class ProductDetailPage extends BaseClass{
 	    		
 		btnClick(p.getSearch());
 		
-		fill(p.getEnterText(), "LIVE FROM ARLINGTON 2023 T-SHIRT");
+		fill(p.getEnterText(), "BLACKENED WHISKEY 72 SEASONS T-SHIRT");
 		
 		performEnter();
 		
@@ -100,7 +100,7 @@ public class ProductDetailPage extends BaseClass{
 		btnClick(p.getRemove());
 	    Thread.sleep(1000);
 	    
-	    System.out.println("Product Detail Page : DONE");
+	    System.out.println("Product Detail Page - Done");
 	    toQuit();
 	    
 	}

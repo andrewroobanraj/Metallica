@@ -22,7 +22,7 @@ public class ProductDetailPagePojo extends BaseClass {
 		}
 		
 		//To select the Product size
-		@FindBy(xpath="(//a[@class='swatchanchor'])[1]")
+		@FindBy(xpath="(//a[@class='swatchanchor'])[2]")
 		private WebElement productSize;
 		
 		public WebElement getProductSize() {

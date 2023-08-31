@@ -63,7 +63,7 @@ public class ShoppingCartPagePojo extends BaseClass{
 	} 
 	
 	//Navigate to PDP from cart page
-	@FindBy(xpath="(//a[@title='Go to Product: M Logo 72 Seasons Tracks T-Shirts - Small'])[4]")
+	@FindBy(xpath="(//a[@title='Go to Product: M Logo 72 Seasons Tracks T-Shirts - Medium'])[4]")
 	private WebElement toPDP;
 	
 	public WebElement getToPDP() {

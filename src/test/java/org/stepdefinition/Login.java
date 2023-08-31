@@ -35,14 +35,14 @@ public class Login extends BaseClass {
 	@Then("User should be in a dashboard page")
 	public void user_should_be_in_a_dashboard_page() {
 		
-		pageUrl();
+		System.out.println("Login Successfully");
 	}
 	
 	@Then("User click Logout")
 	public void user_click_Logout() {
 		
 		btnClick(l.getLogoutButton());
-		toQuit();
+		toClose();
 	}
 	
 	@When("User have to enter {string} and {string}")
@@ -61,7 +61,8 @@ public class Login extends BaseClass {
 	@Then("User should be in a invalid credentials page")
 	public void user_should_be_in_a_invalid_credentials_page() {
 		
-		pageUrl();
+		System.out.println("Invalid credentials");
+		toQuit();
 	    
 	}
 
