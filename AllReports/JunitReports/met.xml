@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="163.00043">
+    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in My Account Page" time="103.652906">
+        <system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to my account page.......................................passed
+And User click all the links in my account page.............................passed
+Then User back to My Account page...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Product Detail Page" time="59.347524">
+        <system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to product detail page...................................passed
+And User choose the size variant............................................passed
+And User select the product quantity........................................passed
+And User add the product to cart............................................passed
+And User check the Einstein Product recommendations.........................passed
+Then User add the pre-order product to cart.................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

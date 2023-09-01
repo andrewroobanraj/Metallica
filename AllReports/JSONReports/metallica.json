@@ -1,0 +1,195 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 16522070800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-01T12:46:29.537Z",
+        "line": 41,
+        "name": "To validate all the fields in My Account Page",
+        "description": "",
+        "id": "to-validate-the-functionality-of-metallica-application;to-validate-all-the-fields-in-my-account-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 13937895100,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "User navigate to my account page",
+            "match": {
+              "location": "MyAccountPage.user_navigate_to_my_account_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 68900261300,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "User click all the links in my account page",
+            "match": {
+              "location": "MyAccountPage.user_click_all_the_links_in_my_account_page()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4151169600,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "User back to My Account page",
+            "match": {
+              "location": "MyAccountPage.user_back_to_My_Account_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@myaccountpage"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14763750900,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-01T12:48:13.195Z",
+        "line": 55,
+        "name": "To validate all the fields in the Product Detail Page",
+        "description": "",
+        "id": "to-validate-the-functionality-of-metallica-application;to-validate-all-the-fields-in-the-product-detail-page",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8327313200,
+              "status": "passed"
+            },
+            "line": 56,
+            "name": "User navigate to product detail page",
+            "match": {
+              "location": "ProductDetailPage.user_navigate_to_product_detail_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 8102100800,
+              "status": "passed"
+            },
+            "line": 57,
+            "name": "User choose the size variant",
+            "match": {
+              "location": "ProductDetailPage.user_choose_the_size_variant()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1116113400,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "User select the product quantity",
+            "match": {
+              "location": "ProductDetailPage.user_select_the_product_quantity()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7189541900,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "User add the product to cart",
+            "match": {
+              "location": "ProductDetailPage.user_add_the_product_to_cart()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4554990600,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "User check the Einstein Product recommendations",
+            "match": {
+              "location": "ProductDetailPage.user_check_the_Einstein_Product_recommendations()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15286407700,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "User add the pre-order product to cart",
+            "match": {
+              "location": "ProductDetailPage.user_add_the_pre_order_product_to_cart()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@productdetailpage"
+          }
+        ]
+      }
+    ],
+    "name": "To validate the functionality of Metallica application",
+    "description": "",
+    "id": "to-validate-the-functionality-of-metallica-application",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Featurefiles/Login.feature",
+    "tags": []
+  }
+]
