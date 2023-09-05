@@ -1,108 +1,111 @@
 package org.stepdefinition;
 
 import org.base.BaseClass;
-import org.pojo.HomePagePojo;
+import org.elements.HomePageElements;
+import org.junit.Assert;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class HomePage extends BaseClass{
 	
+	HomePageElements home=new HomePageElements();
+	
 	@When("User click all the links in home page")
 	public void user_click_all_the_links_in_home_page()  throws InterruptedException{
-		
-		HomePagePojo h=new HomePagePojo();
-		
-		btnClick(h.getCartIcon());
+				
+		btnClick(home.cartIcon);
 		
 		Thread.sleep(2000);
 		
-		btnClick(h.getHomePage());
+		btnClick(home.homePage);
 		
-		btnClick(h.getSearchMenu());
+		btnClick(home.searchMenu);
 		
 		Thread.sleep(2000);
 		
-		btnClick(h.getCloseSearch());
+		btnClick(home.closeSearch);
 		
-		btnClick(h.getMetStore());
+		btnClick(home.metStore);
        
 		Thread.sleep(2000);
 		
-		btnClick(h.getHomePage());
+		btnClick(home.homePage);
 		
-		btnClick(h.getHelplink());
+		btnClick(home.helplink);
         
         Thread.sleep(2000);
         
-        btnClick(h.getHomePage());
+        btnClick(home.homePage);
 		
 		scrollDown();
 		
-		btnClick(h.getCreditsLink());
+		btnClick(home.creditsLink);
 		
 	    Thread.sleep(2000);
 	    
-	    btnClick(h.getHomePage());
+	    btnClick(home.homePage);
 	    
 	    scrollDown();
         
-	    btnClick(h.getTermsOfuseLink());
+	    btnClick(home.termsOfuseLink);
 	  
         Thread.sleep(2000);
 		
-        btnClick(h.getHomePage());
+        btnClick(home.homePage);
 		
 		scrollDown();
 		
-		btnClick(h.getPrivacyPolicylink());
+		btnClick(home.privacyPolicylink);
 		
 	    Thread.sleep(2000);
 	    
-	    btnClick(h.getHomePage());
+	    btnClick(home.homePage);
 		
 		scrollDown();
 		
-        btnClick(h.getAWMH());
+        btnClick(home.AWMH);
 		
 		windowsHandling();
    
-	    btnClick(h.getFifthMember());
+	    btnClick(home.fifthMember);
 	    
 		Thread.sleep(2000);
 		
-		btnClick(h.getHomePage());
+		btnClick(home.homePage);
 				
-		btnClick(h.getTourDates());
+		btnClick(home.tourDates);
 		
 	    Thread.sleep(2000);
 	    
-	    btnClick(h.getHomePage());
+	    btnClick(home.homePage);
 		
-		btnClick(h.getPhotos());
+		btnClick(home.photos);
 		
 	    Thread.sleep(2000);
 	    
-	    btnClick(h.getVideos());
+	    btnClick(home.videos);
 	    
 	    Thread.sleep(2000);
 	    
-	    btnClick(h.getInstagram());
+	    btnClick(home.instagram);
 		
 		windowsHandling();
         		
-		btnClick(h.getProduct());
+		btnClick(home.product);
 		
 		Thread.sleep(2000);
 		
-		btnClick(h.getHomePage());
+		btnClick(home.homePage);
 		
 	}
 
 	@Then("User back to home page")
 	public void user_back_to_home_page() {
 		
-		System.out.println("Home Page - Done");
-		
+		String url = driver.getCurrentUrl();
+		Assert.assertTrue("To check the URL", url.contains("https://www.metallica.com/"));
+		System.out.println("User is in Home Page");
 		toQuit();
 	}
 

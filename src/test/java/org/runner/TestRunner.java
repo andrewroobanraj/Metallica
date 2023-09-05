@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src\\test\\resources",glue="org.stepdefinition",
-tags= {"@myaccountpage,@productdetailpage"},
+tags= "@placeorderpage",
 plugin= {"html:C:\\Users\\UTIS LAPTOP 35\\eclipse-workspace\\Selenium\\Metallica\\AllReports\\HTMLReports",
 		 "junit:C:\\Users\\UTIS LAPTOP 35\\eclipse-workspace\\Selenium\\Metallica\\AllReports\\JunitReports\\met.xml",
 		 "json:C:\\Users\\UTIS LAPTOP 35\\eclipse-workspace\\Selenium\\Metallica\\AllReports\\JSONReports\\metallica.json"})

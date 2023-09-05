@@ -97,7 +97,8 @@ Feature: To validate the functionality of Metallica application
 	Scenario: To validate all the fields in the Place Order Page
 		When User navigate to place order page
 		And  User click the edit cart link
-		Then User click the edit button in payment and billing address fields
+		And  User click the edit button in payment and billing address fields
+		Then User redirected to billing page to edit the payment and billing address
 		
 		
 	

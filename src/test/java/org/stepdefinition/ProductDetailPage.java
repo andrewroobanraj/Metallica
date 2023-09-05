@@ -3,25 +3,26 @@ package org.stepdefinition;
 import java.awt.AWTException;
 
 import org.base.BaseClass;
-import org.pojo.CategoryBrowserPagePojo;
-import org.pojo.HomePagePojo;
-import org.pojo.ProductDetailPagePojo;
+import org.elements.CategoryBrowserPageElements;
+import org.elements.HomePageElements;
+import org.elements.ProductDetailPageElements;
+import org.junit.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ProductDetailPage extends BaseClass{
 	
-	HomePagePojo h=new HomePagePojo();
-	CategoryBrowserPagePojo c=new CategoryBrowserPagePojo();
-	ProductDetailPagePojo p=new ProductDetailPagePojo();
+	HomePageElements home=new HomePageElements();
+	CategoryBrowserPageElements category=new CategoryBrowserPageElements();
+	ProductDetailPageElements product=new ProductDetailPageElements();
 	
 	@When("User navigate to product detail page")
 	public void user_navigate_to_product_detail_page() throws InterruptedException {
 				
-		performMoveToElement(h.getMetStore());
+		performMoveToElement(home.metStore);
 				
-		btnClick(c.getShopAll());
+		btnClick(category.shopAll);
 		Thread.sleep(2000);
 		
 		scroll();
@@ -31,10 +32,10 @@ public class ProductDetailPage extends BaseClass{
 	@When("User choose the size variant")
 	public void user_choose_the_size_variant() throws InterruptedException {
 				
-		btnClick(p.getProduct());
+		btnClick(product.product);
 		Thread.sleep(3000);
 		
-		btnClick(p.getProductSize());
+		btnClick(product.productSize);
 		Thread.sleep(1000);
 
 	}
@@ -42,17 +43,17 @@ public class ProductDetailPage extends BaseClass{
 	@When("User select the product quantity")
 	public void user_select_the_product_quantity() throws InterruptedException {
 				
-		btnClick(p.getProductQty());
+		btnClick(product.productQty);
 	    Thread.sleep(1000);
 
 	}
 	@When("User add the product to cart")
 	public void user_add_the_product_to_cart() throws InterruptedException {
 			    
-	    btnClick(p.getAddTocart());
+	    btnClick(product.addTocart);
 	    Thread.sleep(2000);
 	    
-	    btnClick(p.getRemove());
+	    btnClick(product.remove);
 	    Thread.sleep(1000);
 	    
 	    toRefresh();
@@ -61,10 +62,10 @@ public class ProductDetailPage extends BaseClass{
 	@When("User check the Einstein Product recommendations")
 	public void user_check_the_Einstein_Product_recommendations() throws InterruptedException {
 			    
-		btnClick(p.getNextSlide());
+		btnClick(product.nextSlide);
 		Thread.sleep(3000);
 		
-		btnClick(p.getPreviousSlide());
+		btnClick(product.previousSlide);
 		Thread.sleep(1000);
 				
 	}
@@ -74,33 +75,32 @@ public class ProductDetailPage extends BaseClass{
 		
 		scrollUp();
 				
-		btnClick(h.getSearchMenu());
+		btnClick(home.searchMenu);
 	    Thread.sleep(2000);
 	    		
-		btnClick(p.getSearch());
+		btnClick(product.search);
 		
-		fill(p.getEnterText(), "BLACKENED WHISKEY 72 SEASONS T-SHIRT");
+		fill(product.enterText, "BLACKENED WHISKEY 72 SEASONS T-SHIRT");
 		
 		performEnter();
 		
 		Thread.sleep(2000);
 		
-		btnClick(p.getProductSize());
+		btnClick(product.productSize);
 		Thread.sleep(1000);
 		
-		btnClick(p.getAddTocart());
+		btnClick(product.addTocart);
 		Thread.sleep(1000);
 		
-		btnClick(p.getCheckBox());
+		btnClick(product.checkBox);
 		Thread.sleep(1000);
 		
-		btnClick(p.getPreOrdercart());
+		btnClick(product.preOrdercart);
 		Thread.sleep(2000);
 		
-		btnClick(p.getRemove());
-	    Thread.sleep(1000);
+		Assert.assertTrue(product.cartQuantity.isDisplayed());
 	    
-	    System.out.println("Product Detail Page - Done");
+	    System.out.println("Product Detail Page is verified");
 	    toQuit();
 	    
 	}

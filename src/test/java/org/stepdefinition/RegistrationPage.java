@@ -1,20 +1,22 @@
 package org.stepdefinition;
 
 import org.base.BaseClass;
-import org.pojo.RegistrationPojo;
+import org.elements.RegistrationElements;
+import org.junit.Assert;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class RegistrationPage extends BaseClass {
 	
-	RegistrationPojo r=new RegistrationPojo();
+	RegistrationElements registration=new RegistrationElements();
 	
 	@When("User navigate to registration page")
 	public void user_navigate_to_registration_page() throws InterruptedException {
 				
-		btnClick(r.getProfileIcon());
+		btnClick(registration.profileIcon);
 		Thread.sleep(2000);
-	    btnClick(r.getCreateAccount());
+	    btnClick(registration.createAccount);
 	    
 	}
 
@@ -22,83 +24,82 @@ public class RegistrationPage extends BaseClass {
 	public void user_click_apply_button_without_enter_values_in_mandatory_fields() throws InterruptedException {
 		
 		Thread.sleep(2000);		
-		btnClick(r.getApplyButton());
+		btnClick(registration.applyButton);
 	    
 	}
 
 	@When("User enter values in all the fields")
 	public void user_enter_values_in_all_the_fields() throws InterruptedException {
 				
-		fill(r.getFirstName(), "Test");
+		fill(registration.firstName, "Test");
 		
-		fill(r.getLastName(), "User");
+		fill(registration.lastName, "User");
 	    
-	    fill(r.getUserName(), "TestUser1");
+	    fill(registration.userName, "TestUser1");
 	    
-	    fill(r.getEmail(), "testuser2@gmail.com");
+	    fill(registration.email, "testuser2@gmail.com");
 	    
-	    fill(r.getConfirmEmail(), "testuser2@gmail.com");
+	    fill(registration.confirmEmail, "testuser2@gmail.com");
 	    
-	    fill(r.getPassword(), "TestUser@2");
+	    fill(registration.password, "TestUser@2");
 	    
-	    fill(r.getConfirmPassword(), "TestUser@2");
+	    fill(registration.confirmPassword, "TestUser@2");
 	    
-	    fill(r.getDateOfbirth(), "04/01/1998");
+	    fill(registration.dateOfbirth, "04/01/1998");
 	    
-	    r.genderDropdown();
+	    registration.genderDropdown();
 	    
-	    r.countryDropdown();
+	    registration.countryDropdown();
 	    
-	    fill(r.getZipcode(), "627002");
+	    fill(registration.zipcode, "627002");
 	    
-	    btnClick(r.getCheckbox());
+	    btnClick(registration.checkbox);
 	    
-	    btnClick(r.getApplyButton());
+	    btnClick(registration.applyButton);
 	    
 	}
 	
 	@When("User enter invalid values in the fields")
 	public void user_enter_invalid_values_in_the_fields() throws InterruptedException {
 				
-		r.scrollDown();
+		registration.scrollDown();
 		
-		fieldClear(r.getConfirmPassword());
-		fill(r.getConfirmPassword(), "25348735jhi");
+		fieldClear(registration.confirmPassword);
+		fill(registration.confirmPassword, "25348735jhi");
 		
-		fieldClear(r.getDateOfbirth());
-		fill(r.getDateOfbirth(), "04/01/2020");
+		fieldClear(registration.dateOfbirth);
+		fill(registration.dateOfbirth, "04/01/2020");
 		
-		btnClick(r.getApplyButton());
+		btnClick(registration.applyButton);
 		Thread.sleep(2000);
 		
-		r.scrollDown();
+		registration.scrollDown();
 		Thread.sleep(3000);
 		
-		fieldClear(r.getZipcode());
-		fill(r.getZipcode(), "45445mnbjia");
+		fieldClear(registration.zipcode);
+		fill(registration.zipcode, "45445mnbjia");
 		
-		btnClick(r.getApplyButton());
+		btnClick(registration.applyButton);
 		Thread.sleep(2000);	
 		
-		fieldClear(r.getEmail());
-		fill(r.getEmail(), "asbcd.com");
+		fieldClear(registration.email);
+		fill(registration.email, "asbcd.com");
 		
 	}
 
 	@When("User click apply button")
 	public void user_click_apply_button() throws InterruptedException {
 				
-		btnClick(r.getApplyButton());
+		btnClick(registration.applyButton);
 		Thread.sleep(2000);
-		
-	    
+		    
 	}
 
 	@Then("User is in registration page")
 	public void user_is_in_registration_page() {
 	   
-		System.out.println("Registration Page - Done");
-		
+		Assert.assertTrue(registration.register.isDisplayed());
+		System.out.println("User is in Registration Page");
 		toQuit();
 		
 	}

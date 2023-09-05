@@ -1,4 +1,4 @@
-package org.pojo;
+package org.elements;
 
 import org.base.BaseClass;
 import org.openqa.selenium.By;
@@ -7,10 +7,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class BillingPagePojo extends BaseClass{
+public class BillingPageElements extends BaseClass{
 	
 	//default constructor
-	public BillingPagePojo() {
+	public BillingPageElements() {
 					
 	PageFactory.initElements(driver, this);	
 	
@@ -18,43 +18,23 @@ public class BillingPagePojo extends BaseClass{
 	
 	//To click the review order button
 	@FindBy(xpath="//button[@id='billingSubmitButton']")
-	private WebElement billingSubmit;
-	
-	public WebElement getBillingSubmit() {
-		return billingSubmit;
-	}
+	public WebElement billingSubmit;
 	
 	//To click paypal
 	@FindBy(xpath="//input[@id='is-PAYPAL']")
-	private WebElement paypal;
-	
-	public WebElement getPaypal() {
-		return paypal;
-	}
+	public WebElement paypal;
 	
 	//To click edit in SubTotal
 	@FindBy(xpath="//a[@title='Edit']")
-	private WebElement editSubtotal;
-	
-	public WebElement getEditSubtotal() {
-		return editSubtotal;
-	}
+	public WebElement editSubtotal;
 	
 	//TO click edit in Shipping address
 	@FindBy(xpath="//a[@class='section-header-note']")
-	private WebElement editShipping;
-	
-	public WebElement getEditShipping() {
-		return editShipping;
-	}
+	public WebElement editShipping;
 	
 	//Back to shipping page
 	@FindBy(xpath="//a[@title='Shipping']")
-	private WebElement shippingPage;
-	
-	public WebElement getShippingPage() {
-		return shippingPage;
-	}
+	public WebElement shippingPage;
 	
 	//To select non taxable address from saved address drop down
 	public void addressDropdown() {
@@ -67,36 +47,20 @@ public class BillingPagePojo extends BaseClass{
 	
 	//To click keep original address 
 	@FindBy(xpath="//button[@id='buttonSelectAddressUser']")
-	private WebElement keepOrg2;
+	public WebElement keepOrg2;
 
-	public WebElement getKeepOrg2() {
-		return keepOrg2;
-	}
-	
 	//To enter card number 
 	@FindBy(xpath="//input[@id='dwfrm_billing_paymentMethods_creditCard_number']")
-	private WebElement cardNumber;
-	
-	public WebElement getCardNumber() {
-		return cardNumber;
-	}
+	public WebElement cardNumber;
 	
 	//To enter security code
 	@FindBy(xpath="//input[@id='dwfrm_billing_paymentMethods_creditCard_cvn']")
-	private WebElement securityCode;
-	
-	public WebElement getSecurityCode() {
-		return securityCode;
-	}
+	public WebElement securityCode;
 	
 	//To enter Name on Card
 	@FindBy(xpath="//input[@id='dwfrm_billing_paymentMethods_creditCard_owner']")
-	private WebElement nameOncard;
+	public WebElement nameOncard;
 
-	public WebElement getNameOncard() {
-		return nameOncard;
-	}
-	
 	//To select Expiry Month
 	public void monthDropdown() {
 		
@@ -117,25 +81,19 @@ public class BillingPagePojo extends BaseClass{
 	
 	//To click save this card check box
 	@FindBy(xpath="//input[@id='dwfrm_billing_paymentMethods_creditCard_saveCard']")
-	private WebElement saveCard;
+	public WebElement saveCard;
 	
-	public WebElement getSaveCard() {
-		return saveCard;
-	}
-	
+	//To click the Add Gift check box
 	@FindBy(xpath="//div[text()='Add a Gift Certificate or Coupon']")
-	private WebElement addGift;
+	public WebElement addGift;
 	
-	public WebElement getAddGift() {
-		return addGift;
-	}
-	
+	//To click the Shipping Address check box
 	@FindBy(xpath="//input[@id='dwfrm_billing_billingAddress_useAsBillingAddress']")
-	private WebElement shippingAddress;
-
-	public WebElement getShippingAddress() {
-		return shippingAddress;
-	}	
+	public WebElement shippingAddress;
 	
+	//To check the tax rate for Non taxable address
+	@FindBy(xpath="//dd[@class='order-sales-tax-value js-taxUpdated']")
+	public WebElement taxRate;
+
 	
 }

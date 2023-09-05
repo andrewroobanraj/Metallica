@@ -20,126 +20,51 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "To validate all the fields in My Account Page",
+  "name": "To validate all the fields in the Place Order Page",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@myaccountpage"
+      "name": "@placeorderpage"
     }
   ]
 });
 formatter.step({
-  "name": "User navigate to my account page",
+  "name": "User navigate to place order page",
   "keyword": "When "
 });
 formatter.match({
-  "location": "MyAccountPage.user_navigate_to_my_account_page()"
+  "location": "PlaceOrderPage.user_navigate_to_place_order_page()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User click all the links in my account page",
+  "name": "User click the edit cart link",
   "keyword": "And "
 });
 formatter.match({
-  "location": "MyAccountPage.user_click_all_the_links_in_my_account_page()"
+  "location": "PlaceOrderPage.user_click_the_edit_cart_link()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User back to My Account page",
+  "name": "User click the edit button in payment and billing address fields",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "PlaceOrderPage.user_click_the_edit_button_in_payment_and_billing_address_fields()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "User redirected to billing page to edit the payment and billing address",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "MyAccountPage.user_back_to_My_Account_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "User is in metallica home page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "StepDefinition.user_is_in_metallica_home_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "To validate all the fields in the Product Detail Page",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@productdetailpage"
-    }
-  ]
-});
-formatter.step({
-  "name": "User navigate to product detail page",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "ProductDetailPage.user_navigate_to_product_detail_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User choose the size variant",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ProductDetailPage.user_choose_the_size_variant()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User select the product quantity",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ProductDetailPage.user_select_the_product_quantity()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User add the product to cart",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ProductDetailPage.user_add_the_product_to_cart()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User check the Einstein Product recommendations",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ProductDetailPage.user_check_the_Einstein_Product_recommendations()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User add the pre-order product to cart",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "ProductDetailPage.user_add_the_pre_order_product_to_cart()"
+  "location": "PlaceOrderPage.user_redirected_to_billing_page_to_edit_the_payment_and_billing_address()"
 });
 formatter.result({
   "status": "passed"

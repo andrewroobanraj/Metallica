@@ -1,4 +1,4 @@
-package org.pojo;
+package org.elements;
 
 import org.base.BaseClass;
 import org.openqa.selenium.By;
@@ -8,101 +8,57 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegistrationPojo extends BaseClass{
+public class RegistrationElements extends BaseClass{
 	
 	//default constructor
-	public RegistrationPojo() {
+	public RegistrationElements() {
 				
 		PageFactory.initElements(driver, this);	
 	}
 	
 	//Click the Profile icon
 	@FindBy(className="user-element")
-	private WebElement profileIcon;
-	
-	public WebElement getProfileIcon() {
-		return profileIcon;
-	}
+	public WebElement profileIcon;
 	
 	//Click Create New Account Button
 	@FindBy(xpath="(//button[@type='submit'])[3]")
-	private WebElement createAccount;
-	
-	public WebElement getCreateAccount() {
-		return createAccount;
-	}
+	public WebElement createAccount;
 	
 	//Click Apply Button
 	@FindBy(xpath="(//button[@type='submit'])[2]")
-	private WebElement applyButton;
-	
-	public WebElement getApplyButton() {
-		return applyButton;
-	}
+	public WebElement applyButton;
 	
 	//To enter First Name
 	@FindBy(id="dwfrm_profile_customer_firstname")
-	private WebElement firstName;
-	
-	public WebElement getFirstName() {
-		return firstName;
-	}
+	public WebElement firstName;
 	
 	//To enter Last Name
 	@FindBy(id="dwfrm_profile_customer_lastname")
-	private WebElement lastName;
-	
-	public WebElement getLastName() {
-		return lastName;
-	}
+	public WebElement lastName;
 	
 	//To enter User Name
 	@FindBy(id="dwfrm_profile_customer_username")
-	private WebElement userName;
-	
-	public WebElement getUserName() {
-		return userName;
-	}
+	public WebElement userName;
 	
 	//To enter Email
 	@FindBy(id="dwfrm_profile_customer_email")
-	private WebElement email;
-	
-	public WebElement getEmail() {
-		return email;
-	}
+	public WebElement email;
 	
 	//To enter Confirm Email
 	@FindBy(id="dwfrm_profile_customer_emailconfirm")
-	private WebElement confirmEmail;
+	public WebElement confirmEmail;
 
-	public WebElement getConfirmEmail() {
-		return confirmEmail;
-	}
-	
 	//To enter Password
 	@FindBy(xpath="(//input[@type='password'])[1]")
-	private WebElement password;
-	
-	public WebElement getPassword() {
-		return password;
-	}
+	public WebElement password;
 	
 	//To enter Confirm Password
 	@FindBy(xpath="(//input[@type='password'])[2]")
-	private WebElement confirmPassword;
-	
-	public WebElement getConfirmPassword() {
-		return confirmPassword;
-	}
+	public WebElement confirmPassword;
 	
 	//To enter Date of Birth
 	@FindBy(id="dwfrm_profile_customer_birthday")
-	private WebElement dateOfbirth;
-	
-	public WebElement getDateOfbirth() {
-		return dateOfbirth;
-	}
+	public WebElement dateOfbirth;
 	
 	//To select the Gender	
 	public void genderDropdown() {
@@ -124,28 +80,19 @@ public class RegistrationPojo extends BaseClass{
 	
 	//To enter the ZipCode
 	@FindBy(id="dwfrm_profile_customer_postal")
-	private WebElement zipcode;
-
-	public WebElement getZipcode() {
-		return zipcode;
-	}	
+	public WebElement zipcode;
 
 	//To select the CheckBox
 	@FindBy(id="dwfrm_profile_customer_addtoemaillist")
-	private WebElement checkbox;
+	public WebElement checkbox;
 	
-	public WebElement getCheckbox() {
-		return checkbox;
-	}
-
 	public void scrollDown() {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollTo(0, 600)");
 	}
 	
+	//To check user is in Registratioin Page
+	@FindBy(xpath="//a[@title='Register']")
+	public WebElement register;
 	
-	
-	
-		
-
 }

@@ -75,7 +75,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>METALLICA APPLICATION</td>
-            <td>01 Sep 2023, 18:19</td>
+            <td>04 Sep 2023, 15:08</td>
     </tr>
   </tbody>
 </table>
@@ -128,19 +128,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">To validate the functionality of Metallica application</td>
-          <td      class="passed"    >11</td>
+          <td      class="passed"    >9</td>
+          <td      class="failed"    >1</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
-          <td >0</td>
-          <td class="total">11</td>
+          <td class="total">10</td>
 
-          <td  class="passed"    >2</td>
-          <td >0</td>
+          <td  class="passed"    >1</td>
+          <td  class="failed"    >1</td>
           <td class="total">2</td>
 
-          <td class="duration" data-value="162851615300">2:42.851</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="65442454000">1:5.442</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -172,7 +172,7 @@ $(document).ready(function() {
   </div>
 
         
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Feature</span>
   <span class="name">To validate the functionality of Metallica application</span>
   
@@ -190,7 +190,7 @@ $(document).ready(function() {
   </div>
 
   
-  <span class="lead-duration duration">16.522</span>
+  <span class="lead-duration duration">16.517</span>
 
 
     <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
@@ -231,7 +231,7 @@ $(document).ready(function() {
   <span class="keyword indention">Given</span>
   <span class="name">User is in metallica home page</span>
   
-  <span class="lead-duration duration">16.522</span>
+  <span class="lead-duration duration">16.517</span>
 
 </div>
 
@@ -265,18 +265,18 @@ $(document).ready(function() {
   
 <div class="tags indention">
       <b>Tags:</b>
-           <a href="report-tag_1541432527.html">@myaccountpage</a>
+           <a href="report-tag_1059082225.html">@invalidLogin</a>
       </div>
 
   
-  <span class="lead-duration duration">1:26.989</span>
+  <span class="lead-duration duration">9.591</span>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-3">
+    <span data-toggle="collapse" class=" collapsable-control" data-target="#element-3">
     
-<div class="brief passed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">To validate all the fields in My Account Page</span>
+<div class="brief failed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">To validate login with invalid credentials</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -285,15 +285,15 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-3" class="collapse collapsable-details ">
+  <div id="element-3" class="collapse collapsable-details  in ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-4">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-4">
     
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
   
@@ -303,14 +303,14 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-4" class="inner-level collapse collapsable-details ">
+  <div id="steps-4" class="inner-level collapse collapsable-details  in ">
           <div class="step">
         
 <div class="brief passed">
   <span class="keyword indention">When</span>
-  <span class="name">User navigate to my account page</span>
+  <span class="name">User navigate to login page</span>
   
-  <span class="lead-duration duration">13.937</span>
+  <span class="lead-duration duration">3.380</span>
 
 </div>
 
@@ -333,9 +333,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">And</span>
-  <span class="name">User click all the links in my account page</span>
+  <span class="name">User have to enter <span class="argument">&quot;Metallica12@gmail.com&quot;</span> and <span class="argument">&quot;metallica123&quot;</span></span>
   
-  <span class="lead-duration duration">1:8.900</span>
+  <span class="lead-duration duration">4.286</span>
 
 </div>
 
@@ -357,16 +357,81 @@ $(document).ready(function() {
           <div class="step">
         
 <div class="brief passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">User back to My Account page</span>
+  <span class="keyword indention">And</span>
+  <span class="name">User click login button</span>
   
-  <span class="lead-duration duration">4.151</span>
+  <span class="lead-duration duration">0.230</span>
 
 </div>
 
         
 
         
+
+
+        
+        
+
+        
+
+        
+  
+        
+
+      </div>
+          <div class="step">
+        
+<div class="brief failed">
+  <span class="keyword indention">Then</span>
+  <span class="name">User should be in a invalid credentials page</span>
+  
+  <span class="lead-duration duration">1.693</span>
+
+</div>
+
+        
+
+        
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-5">
+          <a>org.openqa.selenium.NoSuchElementException:</a>
+      </div>
+      <div id="msg-5" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class='error-form']&quot;}
+  (Session info: chrome=114.0.5735.199)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-4L1J982', ip: '192.168.5.173', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\UTISLA~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60441}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b1e5406838fde9afea0d464bb27ccccf
+*** Element info: {Using=xpath, value=//div[@class='error-form']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy18.isDisplayed(Unknown Source)
+	at org.stepdefinition.Login.user_should_be_in_a_invalid_credentials_page(Login.java:67)
+	at &#10045;.User should be in a invalid credentials page(file:src/test/resources/Featurefiles/Login.feature:19)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
         
@@ -396,10 +461,10 @@ $(document).ready(function() {
   </div>
 
   
-  <span class="lead-duration duration">14.763</span>
+  <span class="lead-duration duration">19.733</span>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-6">
     
 <div class="brief passed">
   <span class="keyword indention">Background</span>
@@ -412,13 +477,13 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-5" class="collapse collapsable-details ">
+  <div id="element-6" class="collapse collapsable-details ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-6">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-7">
     
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -430,14 +495,14 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-6" class="inner-level collapse collapsable-details ">
+  <div id="steps-7" class="inner-level collapse collapsable-details ">
           <div class="step">
         
 <div class="brief passed">
   <span class="keyword indention">Given</span>
   <span class="name">User is in metallica home page</span>
   
-  <span class="lead-duration duration">14.763</span>
+  <span class="lead-duration duration">19.733</span>
 
 </div>
 
@@ -471,18 +536,18 @@ $(document).ready(function() {
   
 <div class="tags indention">
       <b>Tags:</b>
-           <a href="report-tag_3355582542.html">@productdetailpage</a>
+           <a href="report-tag_1059082225.html">@invalidLogin</a>
       </div>
 
   
-  <span class="lead-duration duration">44.576</span>
+  <span class="lead-duration duration">19.599</span>
 
 
-    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-7">
+    <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-8">
     
 <div class="brief passed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">To validate all the fields in the Product Detail Page</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">To validate login with invalid credentials</span>
   
 
        <i class="chevron fa fa-fw"></i>
@@ -491,13 +556,13 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-7" class="collapse collapsable-details ">
+  <div id="element-8" class="collapse collapsable-details ">
     
 
 
     
 <div class="steps inner-level">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-8">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-9">
     
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -509,14 +574,14 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-8" class="inner-level collapse collapsable-details ">
+  <div id="steps-9" class="inner-level collapse collapsable-details ">
           <div class="step">
         
 <div class="brief passed">
   <span class="keyword indention">When</span>
-  <span class="name">User navigate to product detail page</span>
+  <span class="name">User navigate to login page</span>
   
-  <span class="lead-duration duration">8.327</span>
+  <span class="lead-duration duration">12.383</span>
 
 </div>
 
@@ -539,9 +604,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">And</span>
-  <span class="name">User choose the size variant</span>
+  <span class="name">User have to enter <span class="argument">&quot;78678932428&quot;</span> and <span class="argument">&quot;123Metalica&quot;</span></span>
   
-  <span class="lead-duration duration">8.102</span>
+  <span class="lead-duration duration">1.014</span>
 
 </div>
 
@@ -564,59 +629,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">And</span>
-  <span class="name">User select the product quantity</span>
+  <span class="name">User click login button</span>
   
-  <span class="lead-duration duration">1.116</span>
-
-</div>
-
-        
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-        
-
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">User add the product to cart</span>
-  
-  <span class="lead-duration duration">7.189</span>
-
-</div>
-
-        
-
-        
-
-
-        
-        
-
-        
-
-        
-  
-        
-
-      </div>
-          <div class="step">
-        
-<div class="brief passed">
-  <span class="keyword indention">And</span>
-  <span class="name">User check the Einstein Product recommendations</span>
-  
-  <span class="lead-duration duration">4.554</span>
+  <span class="lead-duration duration">5.485</span>
 
 </div>
 
@@ -639,9 +654,9 @@ $(document).ready(function() {
         
 <div class="brief passed">
   <span class="keyword indention">Then</span>
-  <span class="name">User add the pre-order product to cart</span>
+  <span class="name">User should be in a invalid credentials page</span>
   
-  <span class="lead-duration duration">15.286</span>
+  <span class="lead-duration duration">0.716</span>
 
 </div>
 

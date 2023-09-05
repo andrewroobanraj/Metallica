@@ -3,69 +3,70 @@ package org.stepdefinition;
 import java.awt.AWTException;
 
 import org.base.BaseClass;
-import org.pojo.CategoryBrowserPagePojo;
-import org.pojo.HomePagePojo;
-import org.pojo.LoginPojo;
-import org.pojo.ProductDetailPagePojo;
-import org.pojo.ShoppingCartPagePojo;
+import org.elements.CategoryBrowserPageElements;
+import org.elements.HomePageElements;
+import org.elements.LoginElements;
+import org.elements.ProductDetailPageElements;
+import org.elements.ShoppingCartPageElements;
+import org.junit.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ShoppingCartPage extends BaseClass{
 	
-	 HomePagePojo h=new HomePagePojo();
-	 CategoryBrowserPagePojo c=new CategoryBrowserPagePojo();
-	 ProductDetailPagePojo p=new ProductDetailPagePojo();
-	 ShoppingCartPagePojo s=new ShoppingCartPagePojo();
-	 LoginPojo l=new LoginPojo();
+	 HomePageElements home=new HomePageElements();
+	 CategoryBrowserPageElements category=new CategoryBrowserPageElements();
+	 ProductDetailPageElements product=new ProductDetailPageElements();
+	 ShoppingCartPageElements shopping=new ShoppingCartPageElements();
+	 LoginElements login=new LoginElements();
 
 
 	 
 	@When("User add some products to cart")
 	public void user_add_some_products_to_cart() throws InterruptedException {
 		
-		performMoveToElement(h.getMetStore());
+		performMoveToElement(home.metStore);
 		
-		btnClick(c.getShopAll());
+		btnClick(category.shopAll);
 		Thread.sleep(1000);
 		
 		scroll();
 		
-		btnClick(p.getProduct());
+		btnClick(product.product);
 		Thread.sleep(3000);
 		
-		btnClick(p.getProductSize());
+		btnClick(product.productSize);
 		Thread.sleep(1000);
 		
-		btnClick(p.getAddTocart());
+		btnClick(product.addTocart);
 	    Thread.sleep(2000);
 	   	    
-	    btnClick(s.getCloseCart());
+	    btnClick(shopping.closeCart);
 	    
-		btnClick(c.getShop());
+		btnClick(category.shop);
 		
 		scroll();
 		
-		btnClick(s.getSecondProduct());
+		btnClick(shopping.secondProduct);
 		
-		btnClick(s.getProductSize());
+		btnClick(shopping.productSize);
 		Thread.sleep(1000);
 		
-		btnClick(p.getAddTocart());
+		btnClick(product.addTocart);
 	    Thread.sleep(2000);
 	    
-	    btnClick(s.getCheckOut());
+	    btnClick(shopping.checkOut);
 	    
 	}
 
 	@When("User change the product quantity")
 	public void user_change_the_product_quantity() throws InterruptedException {
 		
-		btnClick(s.getProductQty());
+		btnClick(shopping.productQty);
 	    Thread.sleep(2000);
 	    
-	    btnClick(s.getProductQty2());
+	    btnClick(shopping.productQty2);
 	    Thread.sleep(2000);
 	   
 	}
@@ -73,7 +74,7 @@ public class ShoppingCartPage extends BaseClass{
 	@When("User navigate to PDP by clicking product link")
 	public void user_navigate_to_PDP_by_clicking_product_link() throws InterruptedException {
 		
-		btnClick(s.getToPDP());
+		btnClick(shopping.toPDP);
 		Thread.sleep(3000);
 	   
 	}
@@ -81,13 +82,13 @@ public class ShoppingCartPage extends BaseClass{
 	@When("User remove the product from cart")
 	public void user_remove_the_product_from_cart() throws InterruptedException {
 		
-		btnClick(h.getCartIcon());
+		btnClick(home.cartIcon);
 	    Thread.sleep(2000);
 	    
-	    btnClick(s.getCheckOut());
+	    btnClick(shopping.checkOut);
 	    Thread.sleep(2000);
 	    
-	    btnClick(s.getRemoveCart());
+	    btnClick(shopping.removeCart);
 	    Thread.sleep(2000);
 
 	}
@@ -95,14 +96,14 @@ public class ShoppingCartPage extends BaseClass{
 	@Then("User checkout as a guest")
 	public void user_checkout_as_a_guest() throws InterruptedException {
 		
-		btnClick(s.getGuestRadio());
+		btnClick(shopping.guestRadio);
 		
-	    fill(s.getGuestmail(), "sampletestmail@gmail.com");
+	    fill(shopping.guestmail, "sampletestmail@gmail.com");
 
-	    btnClick(s.getGuestCheckout());
+	    btnClick(shopping.guestCheckout);
 	    Thread.sleep(2000);
 
-	    btnClick(s.getBackToCart());
+	    btnClick(shopping.backToCart);
 	    Thread.sleep(2000);
 	    
 	}
@@ -110,15 +111,15 @@ public class ShoppingCartPage extends BaseClass{
 	@Then("User login in cart page and checkout")
 	public void user_login_in_cart_page_and_checkout() {
 		
-		fieldClear(s.getGuestmail());
+		fieldClear(shopping.guestmail);
 		
-		fill(s.getGuestmail(), "andrewroobanraaj@gmail.com");
+		fill(shopping.guestmail, "andrewroobanraaj@gmail.com");
 		
-		fill(s.getCartPassword(), "Metallica@2");
+		fill(shopping.cartPassword, "Metallica@2");
 	   
-		btnClick(s.getUserCheckout());	
+		btnClick(shopping.userCheckout);	
 		
-	    btnClick(s.getBackToCart());
+	    btnClick(shopping.backToCart);
 
 		
 	}
@@ -127,20 +128,23 @@ public class ShoppingCartPage extends BaseClass{
 	public void user_logout_and_login_again_to_check_the_cart_products() throws InterruptedException, AWTException {
 		
 		
-		btnClick(l.getProfileIcon());
+		btnClick(login.profileIcon);
 	    Thread.sleep(2000);
 	    
-	    btnClick(l.getLogoutButton());
+	    btnClick(login.logoutButton);
 	    
-	    fill(l.getUserName(), "andrewroobanraaj@gmail.com");
-		fill(l.getPassword(), "Metallica@2");
+	    fill(login.userName, "andrewroobanraaj@gmail.com");
+		fill(login.password, "Metallica@2");
 		Thread.sleep(2000);
 		
-		btnClick(l.getLoginButton());
+		btnClick(login.loginButton);
 		
-		btnClick(h.getCartIcon());
+		btnClick(home.cartIcon);
 	    Thread.sleep(2000);
-	    System.out.println("Shopping Cart Page - Done");
+	    
+	    Assert.assertTrue(product.cartQuantity.isDisplayed());
+	   
+	    System.out.println("The Product is in Cart after Logout and Login the Account");
 	    
 	    toQuit();		
 	    

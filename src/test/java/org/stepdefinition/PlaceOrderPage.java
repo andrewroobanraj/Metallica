@@ -3,73 +3,74 @@ package org.stepdefinition;
 import java.awt.AWTException;
 
 import org.base.BaseClass;
-import org.pojo.BillingPagePojo;
-import org.pojo.HomePagePojo;
-import org.pojo.PlaceOrderPagePojo;
-import org.pojo.ProductDetailPagePojo;
-import org.pojo.ShippingPagePojo;
-import org.pojo.ShoppingCartPagePojo;
+import org.elements.BillingPageElements;
+import org.elements.HomePageElements;
+import org.elements.PlaceOrderPageElements;
+import org.elements.ProductDetailPageElements;
+import org.elements.ShippingPageElements;
+import org.elements.ShoppingCartPageElements;
+import org.junit.Assert;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class PlaceOrderPage extends BaseClass{
 	
-	HomePagePojo h=new HomePagePojo();
-	ProductDetailPagePojo p=new ProductDetailPagePojo();
-	ShippingPagePojo sp=new ShippingPagePojo();
-	ShoppingCartPagePojo s=new ShoppingCartPagePojo();
-	BillingPagePojo b=new BillingPagePojo();
-	PlaceOrderPagePojo po=new PlaceOrderPagePojo();
+	HomePageElements home=new HomePageElements();
+	ProductDetailPageElements product=new ProductDetailPageElements();
+	ShippingPageElements shipping=new ShippingPageElements();
+	ShoppingCartPageElements shopping=new ShoppingCartPageElements();
+	BillingPageElements billing=new BillingPageElements();
+	PlaceOrderPageElements placeorder=new PlaceOrderPageElements();
 	
 	@When("User navigate to place order page")
 	public void user_navigate_to_place_order_page() throws InterruptedException, AWTException {
 		
-		btnClick(h.getSearchMenu());
+		btnClick(home.searchMenu);
 	    Thread.sleep(2000);
 	    		
-		btnClick(p.getSearch());
+		btnClick(product.search);
 		
-		fill(p.getEnterText(), "72 SEASONS SILVER RING");
+		fill(product.enterText, "72 SEASONS SILVER RING");
 		Thread.sleep(1000);
 		
 		performEnter();
 		
 		Thread.sleep(2000);
 				
-		btnClick(sp.getRingSize());
+		btnClick(shipping.ringSize);
 		Thread.sleep(2000);
 		
-		btnClick(p.getAddTocart());
+		btnClick(product.addTocart);
 	    Thread.sleep(2000);
 	    
-	    btnClick(s.getCheckOut());
+	    btnClick(shopping.checkOut);
 	    Thread.sleep(2000);
 	    
-	    fill(s.getGuestmail(), "andrewroobanraaj@gmail.com");
+	    fill(shopping.guestmail, "andrewroobanraaj@gmail.com");
 		
-		fill(s.getCartPassword(), "Metallica@2");
+		fill(shopping.cartPassword, "Metallica@2");
 	   
-		btnClick(s.getUserCheckout());
+		btnClick(shopping.userCheckout);
 	    Thread.sleep(4000);
 
-	    btnClick(sp.getContinueTobilling());
+	    btnClick(shipping.continueTobilling);
 	    Thread.sleep(2000);
 	    
-	    btnClick(sp.getKeepOriginal());
+	    btnClick(shipping.keepOriginal);
 	    Thread.sleep(2000);
 	    
-	    fill(b.getCardNumber(), "4214 3602 2011 9592");
+	    fill(billing.cardNumber, "4214 3602 2011 9592");
 		
-		fill(b.getSecurityCode(), "098");
+		fill(billing.securityCode, "098");
 		
-		fill(b.getNameOncard(), "Andrew Rooban Raj S");
+		fill(billing.nameOncard, "Andrew Rooban Raj S");
 		
-		b.monthDropdown();
+		billing.monthDropdown();
 		
-		b.yearDropdown();
+		billing.yearDropdown();
 		
-		btnClick(b.getBillingSubmit());
+		btnClick(billing.billingSubmit);
 		Thread.sleep(1000);
 	    
 	}
@@ -77,62 +78,73 @@ public class PlaceOrderPage extends BaseClass{
 	@When("User click the edit cart link")
 	public void user_click_the_edit_cart_link() throws InterruptedException {
 		
-		btnClick(po.getBackTocart());
+		btnClick(placeorder.backTocart);
 	    Thread.sleep(2000);
 	    
-	    btnClick(sp.getCheckoutIncart());
+	    btnClick(shipping.checkoutIncart);
 	    Thread.sleep(3000);
 	    
-	    btnClick(sp.getContinueTobilling());
+	    btnClick(shipping.continueTobilling);
 	    Thread.sleep(2000);
 	    
-	    btnClick(sp.getKeepOriginal());
+	    btnClick(shipping.keepOriginal);
 	    Thread.sleep(2000);
 	    
-	    fill(b.getCardNumber(), "4214 3602 2011 9592");
+	    fill(billing.cardNumber, "4214 3602 2011 9592");
 		
-		fill(b.getSecurityCode(), "098");
+		fill(billing.securityCode, "098");
 		
-		fill(b.getNameOncard(), "Andrew Rooban Raj S");
+		fill(billing.nameOncard, "Andrew Rooban Raj S");
 		
-		b.monthDropdown();
+		billing.monthDropdown();
 		
-		b.yearDropdown();
+		billing.yearDropdown();
 		
-		btnClick(b.getSaveCard());
+		btnClick(billing.saveCard);
 		
-		btnClick(b.getBillingSubmit());
+		btnClick(billing.billingSubmit);
 		Thread.sleep(1000);
 
 	}
 
-	@Then("User click the edit button in payment and billing address fields")
+	@When("User click the edit button in payment and billing address fields")
 	public void user_click_the_edit_button_in_payment_and_billing_address_fields() throws InterruptedException {
 		
-		btnClick(po.getEditBillingaddress());
+		btnClick(placeorder.editBillingaddress);
 		Thread.sleep(1000);
 		
-		fill(b.getCardNumber(), "4214 3602 2011 9592");
+		fill(billing.cardNumber, "4214 3602 2011 9592");
 		
-		fill(b.getSecurityCode(), "098");
+		fill(billing.securityCode, "098");
 		
-		fill(b.getNameOncard(), "Andrew Rooban Raj S");
+		fill(billing.nameOncard, "Andrew Rooban Raj S");
 		
-		b.monthDropdown();
+		billing.monthDropdown();
 		
-		b.yearDropdown();
+		billing.yearDropdown();
 		
-		btnClick(b.getSaveCard());
+		btnClick(billing.saveCard);
 		
-		btnClick(b.getBillingSubmit());
+		btnClick(billing.billingSubmit);
 		Thread.sleep(1000);
 		
-		btnClick(po.getEditPayment());
+		btnClick(placeorder.editPayment);
 		
-		System.out.println("Place Order Page - Done");
-		
-		toQuit();
 	    
 	}
+	
+	@Then("User redirected to billing page to edit the payment and billing address")
+	public void user_redirected_to_billing_page_to_edit_the_payment_and_billing_address() {
+		
+		String url = driver.getCurrentUrl();
+		Assert.assertTrue("To check the user is in Place Order Page", url.contains("https://www.metallica.com/billing/"));
+		
+		System.out.println("User is in Billing Page");
+		
+		toQuit();
+		
+	}
+
+
 
 }

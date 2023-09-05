@@ -1,28 +1,30 @@
 package org.stepdefinition;
 
 import org.base.BaseClass;
-import org.pojo.LoginPojo;
-import org.pojo.MyAccountPagePojo;
+import org.elements.LoginElements;
+import org.elements.MyAccountPageElements;
+import org.junit.Assert;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class MyAccountPage extends BaseClass{
 	
-	MyAccountPagePojo a=new MyAccountPagePojo();
-	LoginPojo l=new LoginPojo();
+	MyAccountPageElements myAccount=new MyAccountPageElements();
+	LoginElements login=new LoginElements();
 
 	
 	@When("User navigate to my account page")
 	public void user_navigate_to_my_account_page() throws InterruptedException {
 		
-		btnClick(l.getProfileIcon());
+		btnClick(login.profileIcon);
 	    Thread.sleep(2000);
 	    
-	    fill(l.getUserName(), "andrewroobanraaj@gmail.com");
-		fill(l.getPassword(), "Metallica@2");
+	    fill(login.userName, "andrewroobanraaj@gmail.com");
+		fill(login.password, "Metallica@2");
 		Thread.sleep(2000);
 		
-		btnClick(l.getLoginButton());	
+		btnClick(login.loginButton);	
 	    
 	}
 
@@ -30,42 +32,42 @@ public class MyAccountPage extends BaseClass{
 	public void user_click_all_the_links_in_my_account_page() throws InterruptedException {
 		
 		
-		btnClick(a.getPersonalInfo());
+		btnClick(myAccount.personalInfo);
 	    Thread.sleep(1000);
 		
-	    btnClick(a.getMyAccount());
+	    btnClick(myAccount.myAccount);
 	    
-	    btnClick(a.getAddresses());
+	    btnClick(myAccount.addresses);
 	    Thread.sleep(1000);
 	    
-	    btnClick(a.getMyAccount());
+	    btnClick(myAccount.myAccount);
 
-	    btnClick(a.getOrderHis());
+	    btnClick(myAccount.orderHis);
 	    Thread.sleep(1000);
 	    
-	    btnClick(a.getMyAccount());
+	    btnClick(myAccount.myAccount);
 
-	    btnClick(a.getPaySetting());
+	    btnClick(myAccount.paySetting);
 	    Thread.sleep(1000);
 	    
-	    btnClick(a.getMyAccount());
+	    btnClick(myAccount.myAccount);
 
-	    btnClick(a.getPresaleCodes());
+	    btnClick(myAccount.presaleCodes);
 	    Thread.sleep(1000);
 	    
-	    btnClick(a.getMyAccount());
+	    btnClick(myAccount.myAccount);
 
-	    btnClick(a.getFreeDownload());
+	    btnClick(myAccount.freeDownload);
 	    Thread.sleep(1000);
 	    
-	    btnClick(a.getMyAccount());
+	    btnClick(myAccount.myAccount);
 
-	    btnClick(a.getContests());
+	    btnClick(myAccount.contests);
 	    Thread.sleep(1000);
 	    
-	    btnClick(a.getMyAccount());
+	    btnClick(myAccount.myAccount);
 
-	    btnClick(a.getVinylClub());
+	    btnClick(myAccount.vinylClub);
 	    Thread.sleep(1000);
 	    	    
 	}
@@ -73,9 +75,11 @@ public class MyAccountPage extends BaseClass{
 	@Then("User back to My Account page")
 	public void user_back_to_My_Account_page() {
 		
-		btnClick(a.getMyAccount());
-		System.out.println("My Account Page - Done");
+		btnClick(myAccount.myAccount);
 		
+		String url = driver.getCurrentUrl();
+		Assert.assertTrue("To check the URL", url.contains("https://www.metallica.com/account/"));
+		System.out.println("User is in My Account Page");
 		toQuit();
 			
 	}

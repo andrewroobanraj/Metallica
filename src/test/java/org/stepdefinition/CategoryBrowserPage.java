@@ -1,22 +1,24 @@
 package org.stepdefinition;
 
 import org.base.BaseClass;
-import org.pojo.CategoryBrowserPagePojo;
-import org.pojo.HomePagePojo;
+import org.elements.CategoryBrowserPageElements;
+import org.elements.HomePageElements;
+import org.junit.Assert;
+
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CategoryBrowserPage extends BaseClass{
 	
-	HomePagePojo h=new HomePagePojo();
-	CategoryBrowserPagePojo c=new CategoryBrowserPagePojo();
+	HomePageElements home=new HomePageElements();
+	CategoryBrowserPageElements category=new CategoryBrowserPageElements();
 	
 	@When("User navigate to Met Store")
 	public void user_navigate_to_Met_Store() throws InterruptedException {
 		
-		performMoveToElement(h.getMetStore());
+		performMoveToElement(home.metStore);
 			
-		btnClick(c.getShopAll());
+		btnClick(category.shopAll);
 		Thread.sleep(1000);
 		
 		scroll();
@@ -26,10 +28,10 @@ public class CategoryBrowserPage extends BaseClass{
 	@When("User click the product image")
 	public void user_click_the_product_image() throws InterruptedException {
 				
-		btnClick(c.getProduct());
+		btnClick(category.product);
 		Thread.sleep(2000);
 	    
-	    btnClick(c.getShop());
+	    btnClick(category.shop);
 	    	
 	}
 	
@@ -37,34 +39,34 @@ public class CategoryBrowserPage extends BaseClass{
 	@When("User apply the filters in the left panel")
 	public void user_apply_the_filters_in_the_left_panel() throws InterruptedException {
 				
-		btnClick(c.getPriceFilter());
+		btnClick(category.priceFilter);
 	    Thread.sleep(2000);
-	    btnClick(c.getClearFilter());
+	    btnClick(category.clearFilter);
 		Thread.sleep(2000);
 	    
-	    btnClick(c.getDeptFilter());
+	    btnClick(category.deptFilter);
 	    Thread.sleep(2000);
-	    btnClick(c.getClearFilter());
-	    Thread.sleep(2000);
-	    
-	    btnClick(c.getSizeFilter());
-	    Thread.sleep(2000);
-	    btnClick(c.getClearFilter());
+	    btnClick(category.clearFilter);
 	    Thread.sleep(2000);
 	    
-	    btnClick(c.getFeatureFilter());
+	    btnClick(category.sizeFilter);
 	    Thread.sleep(2000);
-	    btnClick(c.getClearFilter());
+	    btnClick(category.clearFilter);
 	    Thread.sleep(2000);
 	    
-	    btnClick(c.getAlbumFilter());
+	    btnClick(category.featureFilter);
+	    Thread.sleep(2000);
+	    btnClick(category.clearFilter);
+	    Thread.sleep(2000);
+	    
+	    btnClick(category.albumFilter);
 	    Thread.sleep(3000);
-	    btnClick(c.getClearFilter());
+	    btnClick(category.clearFilter);
 	    Thread.sleep(2000);
 	    
-	    btnClick(c.getArtistFilter());
+	    btnClick(category.artistFilter);
 	    Thread.sleep(2000);
-	    btnClick(c.getClearFilter());
+	    btnClick(category.clearFilter);
 	    Thread.sleep(2000); 
 	    
 	}
@@ -75,13 +77,13 @@ public class CategoryBrowserPage extends BaseClass{
 		pageNoscroll();
 		Thread.sleep(1000);
 
-		btnClick(c.getPageNo2());
+		btnClick(category.pageNo2);
 		Thread.sleep(1000);
 
 		pageNoscroll();
 		Thread.sleep(1000);
 
-		btnClick(c.getPageNo3());
+		btnClick(category.pageNo3);
 		Thread.sleep(1000);
 		
 		Thread.sleep(1000);
@@ -92,9 +94,14 @@ public class CategoryBrowserPage extends BaseClass{
 	@Then("User click the view all link")
 	public void user_click_the_view_all_link() throws InterruptedException {
 		
-		btnClick(c.getViewAll());
+		btnClick(category.viewAll);
 		Thread.sleep(2000);
-		System.out.println("Category Browser Page - Done");
+		
+		String url = driver.getCurrentUrl();
+		
+		Assert.assertTrue("To check user is in products view all page", url.contains("https://www.metallica.com/store/?viewAll=true"));
+		
+		System.out.println("All the products are displayed in a Single Page");
 		toQuit();
 	    
 	}

@@ -12,19 +12,19 @@ public class JVMReports {
 	
 	public static void generateReports(String jsonPath) {
 	
-	File f=new File(System.getProperty("user.dir")+"\\AllReports\\JVMReport");
+	File file=new File(System.getProperty("user.dir")+"\\AllReports\\JVMReport");
 
-	Configuration c=new Configuration(f, "METALLICA APPLICATION");
+	Configuration config=new Configuration(file, "METALLICA APPLICATION");
 	
-	c.addClassifications("JDK", "1.8");
-	c.addClassifications("platform","Windows");
+	config.addClassifications("JDK", "1.8");
+	config.addClassifications("platform","Windows");
 	
-	List<String> li=new ArrayList<String>();
+	List<String> list=new ArrayList<String>();
 	
-	li.add(jsonPath);
+	list.add(jsonPath);
 	
-	ReportBuilder r=new ReportBuilder(li,c);
-	r.generateReports();
+	ReportBuilder report=new ReportBuilder(list,config);
+	report.generateReports();
 	
 	
 	
