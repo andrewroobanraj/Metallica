@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="102.586824">
-    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Place Order Page" time="102.586824">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="95.815277">
+    <testcase classname="To validate the functionality of Metallica application" name="To validate login with invalid credentials" time="31.726316">
         <system-out><![CDATA[Given User is in metallica home page........................................passed
-When User navigate to place order page......................................passed
-And User click the edit cart link...........................................passed
-And User click the edit button in payment and billing address fields........passed
-Then User redirected to billing page to edit the payment and billing address.passed
+When User navigate to login page............................................passed
+And User have to enter "Metallica12@gmail.com" and "metallica123"...........passed
+And User click login button.................................................passed
+Then User should be in a invalid credentials page...........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="To validate the functionality of Metallica application" name="To validate login with invalid credentials 2" time="64.088961">
+        <system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to login page............................................passed
+And User have to enter "78678932428" and "123Metalica"......................passed
+And User click login button.................................................passed
+Then User should be in a invalid credentials page...........................passed
 ]]></system-out>
     </testcase>
 </testsuite>

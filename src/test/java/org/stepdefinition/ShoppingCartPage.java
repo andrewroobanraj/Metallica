@@ -20,27 +20,29 @@ public class ShoppingCartPage extends BaseClass{
 	 ProductDetailPageElements product=new ProductDetailPageElements();
 	 ShoppingCartPageElements shopping=new ShoppingCartPageElements();
 	 LoginElements login=new LoginElements();
+	 
+	 int timeoutInSeconds = 10;
 
 
 	 
 	@When("User add some products to cart")
-	public void user_add_some_products_to_cart() throws InterruptedException {
+	public void user_add_some_products_to_cart()  {
 		
 		performMoveToElement(home.metStore);
 		
 		btnClick(category.shopAll);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		scroll();
 		
 		btnClick(product.product);
-		Thread.sleep(3000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.productSize);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.addTocart);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	   	    
 	    btnClick(shopping.closeCart);
 	    
@@ -51,60 +53,60 @@ public class ShoppingCartPage extends BaseClass{
 		btnClick(shopping.secondProduct);
 		
 		btnClick(shopping.productSize);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.addTocart);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.checkOut);
 	    
 	}
 
 	@When("User change the product quantity")
-	public void user_change_the_product_quantity() throws InterruptedException {
+	public void user_change_the_product_quantity()  {
 		
 		btnClick(shopping.productQty);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.productQty2);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	   
 	}
 
 	@When("User navigate to PDP by clicking product link")
-	public void user_navigate_to_PDP_by_clicking_product_link() throws InterruptedException {
+	public void user_navigate_to_PDP_by_clicking_product_link()  {
 		
 		btnClick(shopping.toPDP);
-		Thread.sleep(3000);
+		waitForPageToLoad(timeoutInSeconds);
 	   
 	}
 
 	@When("User remove the product from cart")
-	public void user_remove_the_product_from_cart() throws InterruptedException {
+	public void user_remove_the_product_from_cart()  {
 		
 		btnClick(home.cartIcon);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.checkOut);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.removeCart);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 
 	}
 
 	@Then("User checkout as a guest")
-	public void user_checkout_as_a_guest() throws InterruptedException {
+	public void user_checkout_as_a_guest() {
 		
 		btnClick(shopping.guestRadio);
 		
 	    fill(shopping.guestmail, "sampletestmail@gmail.com");
 
 	    btnClick(shopping.guestCheckout);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 
 	    btnClick(shopping.backToCart);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	}
 
@@ -125,22 +127,22 @@ public class ShoppingCartPage extends BaseClass{
 	}
 
 	@Then("User logout and login again to check the cart products")
-	public void user_logout_and_login_again_to_check_the_cart_products() throws InterruptedException, AWTException {
+	public void user_logout_and_login_again_to_check_the_cart_products() {
 		
 		
 		btnClick(login.profileIcon);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(login.logoutButton);
 	    
 	    fill(login.userName, "andrewroobanraaj@gmail.com");
 		fill(login.password, "Metallica@2");
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(login.loginButton);
 		
 		btnClick(home.cartIcon);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    Assert.assertTrue(product.cartQuantity.isDisplayed());
 	   

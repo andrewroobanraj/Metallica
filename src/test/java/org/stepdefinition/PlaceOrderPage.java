@@ -23,42 +23,44 @@ public class PlaceOrderPage extends BaseClass{
 	BillingPageElements billing=new BillingPageElements();
 	PlaceOrderPageElements placeorder=new PlaceOrderPageElements();
 	
+	int timeoutInSeconds = 10;
+	
 	@When("User navigate to place order page")
-	public void user_navigate_to_place_order_page() throws InterruptedException, AWTException {
+	public void user_navigate_to_place_order_page() throws AWTException, InterruptedException {
 		
 		btnClick(home.searchMenu);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    		
 		btnClick(product.search);
 		
 		fill(product.enterText, "72 SEASONS SILVER RING");
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		performEnter();
 		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 				
 		btnClick(shipping.ringSize);
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.addTocart);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.checkOut);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(shopping.guestmail, "andrewroobanraaj@gmail.com");
 		
 		fill(shopping.cartPassword, "Metallica@2");
 	   
 		btnClick(shopping.userCheckout);
-	    Thread.sleep(4000);
+		Thread.sleep(3000);
 
 	    btnClick(shipping.continueTobilling);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.keepOriginal);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(billing.cardNumber, "4214 3602 2011 9592");
 		
@@ -71,24 +73,24 @@ public class PlaceOrderPage extends BaseClass{
 		billing.yearDropdown();
 		
 		btnClick(billing.billingSubmit);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	}
 
 	@When("User click the edit cart link")
-	public void user_click_the_edit_cart_link() throws InterruptedException {
+	public void user_click_the_edit_cart_link() throws InterruptedException  {
 		
 		btnClick(placeorder.backTocart);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.checkoutIncart);
 	    Thread.sleep(3000);
 	    
 	    btnClick(shipping.continueTobilling);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.keepOriginal);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(billing.cardNumber, "4214 3602 2011 9592");
 		
@@ -103,15 +105,15 @@ public class PlaceOrderPage extends BaseClass{
 		btnClick(billing.saveCard);
 		
 		btnClick(billing.billingSubmit);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 
 	}
 
 	@When("User click the edit button in payment and billing address fields")
-	public void user_click_the_edit_button_in_payment_and_billing_address_fields() throws InterruptedException {
+	public void user_click_the_edit_button_in_payment_and_billing_address_fields() {
 		
 		btnClick(placeorder.editBillingaddress);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		fill(billing.cardNumber, "4214 3602 2011 9592");
 		
@@ -126,7 +128,7 @@ public class PlaceOrderPage extends BaseClass{
 		btnClick(billing.saveCard);
 		
 		btnClick(billing.billingSubmit);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(placeorder.editPayment);
 		

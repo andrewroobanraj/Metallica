@@ -18,13 +18,15 @@ public class ShippingPage extends BaseClass{
 	ProductDetailPageElements product=new ProductDetailPageElements();
 	ShippingPageElements shipping=new ShippingPageElements();
 	ShoppingCartPageElements shopping=new ShoppingCartPageElements();
+	
+	int timeoutInSeconds = 10;
 
 	
 	@When("User navigate to shipping page")
-	public void user_navigate_to_shipping_page() throws InterruptedException, AWTException {
+	public void user_navigate_to_shipping_page() throws AWTException {
 		
 		btnClick(home.searchMenu);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    		
 		btnClick(product.search);
 		
@@ -32,16 +34,16 @@ public class ShippingPage extends BaseClass{
 		
 		performEnter();
 		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 				
 		btnClick(shipping.ringSize);
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.addTocart);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.checkOut);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(shopping.guestmail, "andrewroobanraaj@gmail.com");
 		
@@ -74,99 +76,98 @@ public class ShippingPage extends BaseClass{
 	}
 
 	@When("User select address from saved address dropdown")
-	public void user_select_address_from_saved_address_dropdown() throws InterruptedException {
+	public void user_select_address_from_saved_address_dropdown()  {
 		
 		fieldClear(shipping.city);
 		fieldClear(shipping.zipCode);
 		
 		shipping.addressDropdown();
-		Thread.sleep(2000);
-	   
+		   
 	}
 
 	@When("User click the Use this address checkbox")
-	public void user_click_the_Use_this_address_checkbox() throws InterruptedException {
+	public void user_click_the_Use_this_address_checkbox() {
 		
 		btnClick(shipping.addressCheckbox);
-		Thread.sleep(3000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shipping.addressCheckbox);
-		Thread.sleep(3000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	}
 
 	@When("User click the Is this a Gift checkbox")
-	public void user_click_the_Is_this_a_Gift_checkbox() throws InterruptedException {
+	public void user_click_the_Is_this_a_Gift_checkbox() throws InterruptedException  {
 	    
 		btnClick(shipping.giftCheckbox);
 		
 		fill(shipping.giftMessage, "Hii Buddy");
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shipping.giftCheckbox);
+		Thread.sleep(3000);
 		
 	}
 
 	@Then("User select the Shipping Method")
 	public void user_select_the_Shipping_Method() {
 		
-		String Method1 = shipping.shipMethodlabel1.getText();
-		System.out.println("Shipping Method for Normal Product: " + Method1);
+		Assert.assertTrue("ship method for normal product", shipping.shipMethodlabel1.isDisplayed());
 		
 		btnClick(shipping.shippingMethod);
+		waitForPageToLoad(timeoutInSeconds);
 	   
 	}
 
 	@Then("User check shipping method label for Pre Order product")
-	public void user_check_shipping_method_label_for_Pre_Order_product() throws InterruptedException, AWTException {
+	public void user_check_shipping_method_label_for_Pre_Order_product() throws AWTException, InterruptedException {
 		
 		scrollUp();
 		
 		btnClick(shopping.backToCart);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shopping.removeCart);
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	   
 		btnClick(home.searchMenu);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    		
 		btnClick(product.search);
 		
-		fill(product.enterText, "BLACKENED WHISKEY 72 SEASONS T-SHIRT");
+		fill(product.enterText, "LIVE METALLICA: EAST RUTHERFORD, NJ - AUGUST 6, 2023 (2CD)");
 		
 		performEnter();
 		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
-		btnClick(product.productSize);
-		Thread.sleep(1000);
+		//btnClick(product.productSize);
+		//waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.addTocart);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.checkBox);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.preOrdercart);
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shipping.preOrdercheckOut);
 		
 		btnClick(shipping.checkoutIncart);
 		Thread.sleep(3000);
-		
-		String Method = shipping.shipMethodlabel.getText();
-		System.out.println("Shipping Method for Pre-Order: " + Method);
-
+	
+		Assert.assertTrue("Shipping Method for Pre-Order", shipping.shipMethodlabel.isDisplayed());
 		
 	}
 
 	@Then("User click the Continue to billing button")
-	public void user_click_the_Continue_to_billing_button() throws InterruptedException {
+	public void user_click_the_Continue_to_billing_button()  {
 	   
 		
 	    btnClick(shipping.continueTobilling);
-		Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.keepOriginal);
 	    

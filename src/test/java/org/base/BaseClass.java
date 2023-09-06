@@ -4,12 +4,19 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.fasterxml.jackson.databind.node.BooleanNode;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -172,13 +179,23 @@ public class BaseClass {
 		
     }
     
-    public void winHand() {
-    	
-    	 ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+    public void waitForPageToLoad(int timeoutInSeconds) {
+       
+    	JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        String pageLoadState;
 
-         driver.switchTo().window(tabs.get(0));
-         driver.close();
-    	
+        do {
+            try {
+                Thread.sleep(1000); 
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            
+            pageLoadState = (String) jsExecutor.executeScript("return document.readyState");
+        } while (!pageLoadState.equals("complete"));
+
     }
 	
 }
+
+

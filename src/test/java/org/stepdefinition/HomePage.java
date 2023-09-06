@@ -11,54 +11,49 @@ public class HomePage extends BaseClass{
 	
 	HomePageElements home=new HomePageElements();
 	
+	int timeoutInSeconds = 10;
+	
 	@When("User click all the links in home page")
-	public void user_click_all_the_links_in_home_page()  throws InterruptedException{
+	public void user_click_all_the_links_in_home_page() throws InterruptedException {
 				
 		btnClick(home.cartIcon);
-		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(home.homePage);
 		
 		btnClick(home.searchMenu);
-		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(home.closeSearch);
 		
 		btnClick(home.metStore);
-       
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(home.homePage);
 		
 		btnClick(home.helplink);
-        
-        Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
         
         btnClick(home.homePage);
 		
 		scrollDown();
 		
 		btnClick(home.creditsLink);
-		
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(home.homePage);
 	    
 	    scrollDown();
         
 	    btnClick(home.termsOfuseLink);
-	  
-        Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 		
         btnClick(home.homePage);
 		
 		scrollDown();
 		
 		btnClick(home.privacyPolicylink);
-		
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(home.homePage);
 		
@@ -69,32 +64,27 @@ public class HomePage extends BaseClass{
 		windowsHandling();
    
 	    btnClick(home.fifthMember);
-	    
-		Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(home.homePage);
 				
 		btnClick(home.tourDates);
-		
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(home.homePage);
 		
 		btnClick(home.photos);
-		
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(home.videos);
-	    
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(home.instagram);
 		
 		windowsHandling();
         		
 		btnClick(home.product);
-		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(home.homePage);
 		

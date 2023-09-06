@@ -10,21 +10,22 @@ import io.cucumber.java.en.When;
 public class Login extends BaseClass {
 	
 	    LoginElements login=new LoginElements();
+	    
+	    int timeoutInSeconds = 10;
 
 
 	@When("User navigate to login page")
-	public void user_navigate_to_login_page() throws InterruptedException {
+	public void user_navigate_to_login_page() {
 	    
 		btnClick(login.profileIcon);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	}
 
 	@When("User enter valid userName and valid Password")
-	public void user_enter_valid_userName_and_valid_Password() throws InterruptedException {
+	public void user_enter_valid_userName_and_valid_Password() {
 		
 		fill(login.userName, "andrewroobanraaj@gmail.com");
 		fill(login.password, "Metallica@2");
-		Thread.sleep(2000);
 		
 	}
 
@@ -57,10 +58,11 @@ public class Login extends BaseClass {
 	
 
 	@When("User click login button")
-	public void user_click_login_button() throws InterruptedException {
+	public void user_click_login_button() {
 	   
 		btnClick(login.loginButton);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
+		
 	}
 
 	@Then("User should be in a invalid credentials page")

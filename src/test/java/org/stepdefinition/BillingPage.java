@@ -20,83 +20,85 @@ public class BillingPage extends BaseClass {
 	ShippingPageElements shipping=new ShippingPageElements();
 	ShoppingCartPageElements shopping=new ShoppingCartPageElements();
 	BillingPageElements billing=new BillingPageElements();
+	
+	int timeoutInSeconds = 10;
 
 	@When("User navigate to billing page")
-	public void user_navigate_to_billing_page() throws InterruptedException, AWTException {
+	public void user_navigate_to_billing_page() throws AWTException, InterruptedException {
     
 		btnClick(home.searchMenu);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    		
 		btnClick(product.search);
 		
 		fill(product.enterText, "72 SEASONS SILVER RING");
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		performEnter();
 		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 				
 		btnClick(shipping.ringSize);
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.addTocart);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.checkOut);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(shopping.guestmail, "andrewroobanraaj@gmail.com");
 		
 		fill(shopping.cartPassword, "Metallica@2");
 	   
 		btnClick(shopping.userCheckout);
-	    Thread.sleep(4000);
+		Thread.sleep(3000);
 
 	    btnClick(shipping.continueTobilling);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.keepOriginal);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 
 	}
 	
 	@When("User click review order button without filling the mandatory fields")
-	public void User_click_review_order_button_without_filling_the_mandatory_fields() throws InterruptedException {
+	public void User_click_review_order_button_without_filling_the_mandatory_fields()  {
 		
 		btnClick(billing.billingSubmit);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 	}
 
 	@When("User click the Paypal button")
-	public void user_click_the_Paypal_button() throws InterruptedException {
+	public void user_click_the_Paypal_button()  {
 		
 		btnClick(billing.paypal);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 
     
 	}
 
 	@When("User click the Edit button in SubTotal and Shipping address field")
-	public void user_click_the_Edit_button_in_SubTotal_and_Shipping_address_field() throws InterruptedException {
+	public void user_click_the_Edit_button_in_SubTotal_and_Shipping_address_field()  {
 		
 		btnClick(billing.editSubtotal);
-	    Thread.sleep(4000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.continueTobilling);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.keepOriginal);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(billing.editShipping);
-	    Thread.sleep(4000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.continueTobilling);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shipping.keepOriginal);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	   
 	}
 
@@ -104,15 +106,16 @@ public class BillingPage extends BaseClass {
 	public void user_select_the_non_taxable_address_from_saved_address_dropdown() throws InterruptedException {
 		
 		btnClick(billing.shippingPage);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    billing.addressDropdown();
-	    Thread.sleep(4000);
+	    Thread.sleep(3000);
 	    
 	    btnClick(shipping.continueTobilling);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(billing.keepOrg2);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    String tax = billing.taxRate.getText();
 	    System.out.println("Tax Rate for Non-Taxable address: " +tax);
@@ -135,22 +138,22 @@ public class BillingPage extends BaseClass {
 	}
 
 	@When("User validate the saved this card, add a gift and shipping address checkbox")
-	public void user_validate_the_saved_this_card_add_a_gift_and_shipping_address_checkbox() throws InterruptedException {
+	public void user_validate_the_saved_this_card_add_a_gift_and_shipping_address_checkbox()  {
                         
 		btnClick(billing.saveCard);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(billing.addGift);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 
 		btnClick(billing.addGift);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(billing.shippingAddress);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(billing.shippingAddress);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 	}
 

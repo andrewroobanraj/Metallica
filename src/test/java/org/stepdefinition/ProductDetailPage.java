@@ -17,86 +17,88 @@ public class ProductDetailPage extends BaseClass{
 	CategoryBrowserPageElements category=new CategoryBrowserPageElements();
 	ProductDetailPageElements product=new ProductDetailPageElements();
 	
+	int timeoutInSeconds = 10;
+	
 	@When("User navigate to product detail page")
-	public void user_navigate_to_product_detail_page() throws InterruptedException {
+	public void user_navigate_to_product_detail_page() {
 				
 		performMoveToElement(home.metStore);
 				
 		btnClick(category.shopAll);
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		scroll();
-		Thread.sleep(1000);   
+		waitForPageToLoad(timeoutInSeconds);   
 	}
 
 	@When("User choose the size variant")
-	public void user_choose_the_size_variant() throws InterruptedException {
+	public void user_choose_the_size_variant()  {
 				
 		btnClick(product.product);
-		Thread.sleep(3000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.productSize);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 
 	}
 	
 	@When("User select the product quantity")
-	public void user_select_the_product_quantity() throws InterruptedException {
+	public void user_select_the_product_quantity()  {
 				
 		btnClick(product.productQty);
-	    Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 
 	}
 	@When("User add the product to cart")
-	public void user_add_the_product_to_cart() throws InterruptedException {
+	public void user_add_the_product_to_cart()  {
 			    
 	    btnClick(product.addTocart);
-	    Thread.sleep(2000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(product.remove);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    toRefresh();
 	}
 
 	@When("User check the Einstein Product recommendations")
-	public void user_check_the_Einstein_Product_recommendations() throws InterruptedException {
+	public void user_check_the_Einstein_Product_recommendations() {
 			    
 		btnClick(product.nextSlide);
-		Thread.sleep(3000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.previousSlide);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 				
 	}
 
 	@Then("User add the pre-order product to cart")
-	public void user_add_the_pre_order_product_to_cart() throws AWTException, InterruptedException {
+	public void user_add_the_pre_order_product_to_cart() throws AWTException {
 		
 		scrollUp();
 				
 		btnClick(home.searchMenu);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    		
 		btnClick(product.search);
 		
-		fill(product.enterText, "BLACKENED WHISKEY 72 SEASONS T-SHIRT");
+		fill(product.enterText, "LIVE METALLICA: EAST RUTHERFORD, NJ - AUGUST 6, 2023 (2CD)");
 		
 		performEnter();
 		
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
-		btnClick(product.productSize);
-		Thread.sleep(1000);
+		//btnClick(product.productSize);
+		//waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.addTocart);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.checkBox);
-		Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(product.preOrdercart);
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		Assert.assertTrue(product.cartQuantity.isDisplayed());
 	    

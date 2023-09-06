@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 18586259100,
+              "duration": 18264372800,
               "status": "passed"
             },
             "line": 4,
@@ -24,66 +24,171 @@
         ]
       },
       {
-        "start_timestamp": "2023-09-05T09:57:00.043Z",
-        "line": 97,
-        "name": "To validate all the fields in the Place Order Page",
+        "start_timestamp": "2023-09-06T11:47:35.138Z",
+        "line": 23,
+        "name": "To validate login with invalid credentials",
         "description": "",
-        "id": "to-validate-the-functionality-of-metallica-application;to-validate-all-the-fields-in-the-place-order-page",
+        "id": "to-validate-the-functionality-of-metallica-application;to-validate-login-with-invalid-credentials;;2",
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 44364176300,
+              "duration": 6526906000,
               "status": "passed"
             },
-            "line": 98,
-            "name": "User navigate to place order page",
+            "line": 16,
+            "name": "User navigate to login page",
             "match": {
-              "location": "PlaceOrderPage.user_navigate_to_place_order_page()"
+              "location": "Login.user_navigate_to_login_page()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 26235543900,
+              "duration": 527198400,
               "status": "passed"
             },
-            "line": 99,
-            "name": "User click the edit cart link",
+            "line": 17,
+            "name": "User have to enter \"Metallica12@gmail.com\" and \"metallica123\"",
             "match": {
-              "location": "PlaceOrderPage.user_click_the_edit_cart_link()"
+              "arguments": [
+                {
+                  "val": "\"Metallica12@gmail.com\"",
+                  "offset": 19
+                },
+                {
+                  "val": "\"metallica123\"",
+                  "offset": 47
+                }
+              ],
+              "location": "Login.user_have_to_enter_and(String,String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 12426950100,
+              "duration": 5105574200,
               "status": "passed"
             },
-            "line": 100,
-            "name": "User click the edit button in payment and billing address fields",
+            "line": 18,
+            "name": "User click login button",
             "match": {
-              "location": "PlaceOrderPage.user_click_the_edit_button_in_payment_and_billing_address_fields()"
+              "location": "Login.user_click_login_button()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 744939800,
+              "duration": 1017839500,
               "status": "passed"
             },
-            "line": 101,
-            "name": "User redirected to billing page to edit the payment and billing address",
+            "line": 19,
+            "name": "User should be in a invalid credentials page",
             "match": {
-              "location": "PlaceOrderPage.user_redirected_to_billing_page_to_edit_the_payment_and_billing_address()"
+              "location": "Login.user_should_be_in_a_invalid_credentials_page()"
             },
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "name": "@placeorderpage"
+            "name": "@invalidLogin"
+          }
+        ]
+      },
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 32087588000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-06T11:48:06.869Z",
+        "line": 24,
+        "name": "To validate login with invalid credentials",
+        "description": "",
+        "id": "to-validate-the-functionality-of-metallica-application;to-validate-login-with-invalid-credentials;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5105092400,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User navigate to login page",
+            "match": {
+              "location": "Login.user_navigate_to_login_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1226579600,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User have to enter \"78678932428\" and \"123Metalica\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"78678932428\"",
+                  "offset": 19
+                },
+                {
+                  "val": "\"123Metalica\"",
+                  "offset": 37
+                }
+              ],
+              "location": "Login.user_have_to_enter_and(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25086402700,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User click login button",
+            "match": {
+              "location": "Login.user_click_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 579912700,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User should be in a invalid credentials page",
+            "match": {
+              "location": "Login.user_should_be_in_a_invalid_credentials_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@invalidLogin"
           }
         ]
       }

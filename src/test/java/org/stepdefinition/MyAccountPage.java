@@ -12,63 +12,65 @@ public class MyAccountPage extends BaseClass{
 	
 	MyAccountPageElements myAccount=new MyAccountPageElements();
 	LoginElements login=new LoginElements();
+	
+	int timeoutInSeconds = 10;
 
 	
 	@When("User navigate to my account page")
-	public void user_navigate_to_my_account_page() throws InterruptedException {
+	public void user_navigate_to_my_account_page()  {
 		
 		btnClick(login.profileIcon);
-	    Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(login.userName, "andrewroobanraaj@gmail.com");
 		fill(login.password, "Metallica@2");
-		Thread.sleep(2000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(login.loginButton);	
 	    
 	}
 
 	@When("User click all the links in my account page")
-	public void user_click_all_the_links_in_my_account_page() throws InterruptedException {
+	public void user_click_all_the_links_in_my_account_page()  {
 		
 		
 		btnClick(myAccount.personalInfo);
-	    Thread.sleep(1000);
+		waitForPageToLoad(timeoutInSeconds);
 		
 	    btnClick(myAccount.myAccount);
 	    
 	    btnClick(myAccount.addresses);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.orderHis);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.paySetting);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.presaleCodes);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.freeDownload);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.contests);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.vinylClub);
-	    Thread.sleep(1000);
+	    waitForPageToLoad(timeoutInSeconds);
 	    	    
 	}
 
