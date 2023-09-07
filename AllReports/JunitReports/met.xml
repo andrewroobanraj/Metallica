@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="95.815277">
-    <testcase classname="To validate the functionality of Metallica application" name="To validate login with invalid credentials" time="31.726316">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="109.241128">
+    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Shipping Page" time="109.241128">
         <system-out><![CDATA[Given User is in metallica home page........................................passed
-When User navigate to login page............................................passed
-And User have to enter "Metallica12@gmail.com" and "metallica123"...........passed
-And User click login button.................................................passed
-Then User should be in a invalid credentials page...........................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="To validate the functionality of Metallica application" name="To validate login with invalid credentials 2" time="64.088961">
-        <system-out><![CDATA[Given User is in metallica home page........................................passed
-When User navigate to login page............................................passed
-And User have to enter "78678932428" and "123Metalica"......................passed
-And User click login button.................................................passed
-Then User should be in a invalid credentials page...........................passed
+When User navigate to shipping page.........................................passed
+And User validate the mandatory fields......................................passed
+And User validate the shipping address fields...............................passed
+And User select address from saved address dropdown.........................passed
+And User click the Use this address checkbox................................passed
+And User click the Is this a Gift checkbox..................................passed
+Then User select the Shipping Method........................................passed
+And User check shipping method label for Pre Order product..................passed
+And User click the Continue to billing button...............................passed
 ]]></system-out>
     </testcase>
 </testsuite>

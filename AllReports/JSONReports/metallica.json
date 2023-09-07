@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 18264372800,
+              "duration": 35780079500,
               "status": "passed"
             },
             "line": 4,
@@ -24,171 +24,126 @@
         ]
       },
       {
-        "start_timestamp": "2023-09-06T11:47:35.138Z",
-        "line": 23,
-        "name": "To validate login with invalid credentials",
+        "start_timestamp": "2023-09-07T09:45:23.976Z",
+        "line": 74,
+        "name": "To validate all the fields in the Shipping Page",
         "description": "",
-        "id": "to-validate-the-functionality-of-metallica-application;to-validate-login-with-invalid-credentials;;2",
+        "id": "to-validate-the-functionality-of-metallica-application;to-validate-all-the-fields-in-the-shipping-page",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 6526906000,
+              "duration": 20863823800,
               "status": "passed"
             },
-            "line": 16,
-            "name": "User navigate to login page",
+            "line": 75,
+            "name": "User navigate to shipping page",
             "match": {
-              "location": "Login.user_navigate_to_login_page()"
+              "location": "ShippingPage.user_navigate_to_shipping_page()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 527198400,
+              "duration": 1449397400,
               "status": "passed"
             },
-            "line": 17,
-            "name": "User have to enter \"Metallica12@gmail.com\" and \"metallica123\"",
+            "line": 76,
+            "name": "User validate the mandatory fields",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"Metallica12@gmail.com\"",
-                  "offset": 19
-                },
-                {
-                  "val": "\"metallica123\"",
-                  "offset": 47
-                }
-              ],
-              "location": "Login.user_have_to_enter_and(String,String)"
+              "location": "ShippingPage.user_validate_the_mandatory_fields()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 5105574200,
+              "duration": 1174373900,
               "status": "passed"
             },
-            "line": 18,
-            "name": "User click login button",
+            "line": 77,
+            "name": "User validate the shipping address fields",
             "match": {
-              "location": "Login.user_click_login_button()"
+              "location": "ShippingPage.user_validate_the_shipping_address_fields()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1017839500,
+              "duration": 495016100,
               "status": "passed"
             },
-            "line": 19,
-            "name": "User should be in a invalid credentials page",
+            "line": 78,
+            "name": "User select address from saved address dropdown",
             "match": {
-              "location": "Login.user_should_be_in_a_invalid_credentials_page()"
+              "location": "ShippingPage.user_select_address_from_saved_address_dropdown()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2414793800,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "User click the Use this address checkbox",
+            "match": {
+              "location": "ShippingPage.user_click_the_Use_this_address_checkbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6654070000,
+              "status": "passed"
+            },
+            "line": 80,
+            "name": "User click the Is this a Gift checkbox",
+            "match": {
+              "location": "ShippingPage.user_click_the_Is_this_a_Gift_checkbox()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1217532300,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "User select the Shipping Method",
+            "match": {
+              "location": "ShippingPage.user_select_the_Shipping_Method()"
             },
             "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 31825940200,
+              "status": "passed"
+            },
+            "line": 82,
+            "name": "User check shipping method label for Pre Order product",
+            "match": {
+              "location": "ShippingPage.user_check_shipping_method_label_for_Pre_Order_product()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6885845100,
+              "status": "passed"
+            },
+            "line": 83,
+            "name": "User click the Continue to billing button",
+            "match": {
+              "location": "ShippingPage.user_click_the_Continue_to_billing_button()"
+            },
+            "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@invalidLogin"
-          }
-        ]
-      },
-      {
-        "line": 3,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 32087588000,
-              "status": "passed"
-            },
-            "line": 4,
-            "name": "User is in metallica home page",
-            "match": {
-              "location": "StepDefinition.user_is_in_metallica_home_page()"
-            },
-            "keyword": "Given "
-          }
-        ]
-      },
-      {
-        "start_timestamp": "2023-09-06T11:48:06.869Z",
-        "line": 24,
-        "name": "To validate login with invalid credentials",
-        "description": "",
-        "id": "to-validate-the-functionality-of-metallica-application;to-validate-login-with-invalid-credentials;;3",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 5105092400,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "User navigate to login page",
-            "match": {
-              "location": "Login.user_navigate_to_login_page()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1226579600,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "User have to enter \"78678932428\" and \"123Metalica\"",
-            "match": {
-              "arguments": [
-                {
-                  "val": "\"78678932428\"",
-                  "offset": 19
-                },
-                {
-                  "val": "\"123Metalica\"",
-                  "offset": 37
-                }
-              ],
-              "location": "Login.user_have_to_enter_and(String,String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 25086402700,
-              "status": "passed"
-            },
-            "line": 18,
-            "name": "User click login button",
-            "match": {
-              "location": "Login.user_click_login_button()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 579912700,
-              "status": "passed"
-            },
-            "line": 19,
-            "name": "User should be in a invalid credentials page",
-            "match": {
-              "location": "Login.user_should_be_in_a_invalid_credentials_page()"
-            },
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "name": "@invalidLogin"
+            "name": "@shippingpage"
           }
         ]
       }

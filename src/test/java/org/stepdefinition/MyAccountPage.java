@@ -24,9 +24,9 @@ public class MyAccountPage extends BaseClass{
 	    
 	    fill(login.userName, "andrewroobanraaj@gmail.com");
 		fill(login.password, "Metallica@2");
-		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(login.loginButton);	
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	}
 

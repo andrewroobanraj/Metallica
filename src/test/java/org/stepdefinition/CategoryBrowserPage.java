@@ -102,6 +102,8 @@ public class CategoryBrowserPage extends BaseClass{
 		btnClick(category.viewAll);
 		waitForPageToLoad(timeoutInSeconds);
 		
+		scrollUp();
+		
 		String url = driver.getCurrentUrl();
 		
 		Assert.assertTrue(url.contains("https://www.metallica.com/store/?viewAll=true"));

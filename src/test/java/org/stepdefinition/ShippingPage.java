@@ -105,7 +105,7 @@ public class ShippingPage extends BaseClass{
 		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shipping.giftCheckbox);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 	}
 
@@ -156,7 +156,7 @@ public class ShippingPage extends BaseClass{
 		btnClick(shipping.preOrdercheckOut);
 		
 		btnClick(shipping.checkoutIncart);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	
 		Assert.assertTrue("Shipping Method for Pre-Order", shipping.shipMethodlabel.isDisplayed());
 		
