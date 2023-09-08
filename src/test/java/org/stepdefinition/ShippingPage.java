@@ -50,6 +50,7 @@ public class ShippingPage extends BaseClass{
 		fill(shopping.cartPassword, "Metallica@2");
 	   
 		btnClick(shopping.userCheckout);
+		waitForPageToLoad(timeoutInSeconds);
 	    
 	}
 
@@ -63,6 +64,7 @@ public class ShippingPage extends BaseClass{
 	    fieldClear(shipping.zipCode);
 	    fieldClear(shipping.phone);
 	    btnClick(shipping.continueTobilling);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	}
 
@@ -72,6 +74,7 @@ public class ShippingPage extends BaseClass{
 		fill(shipping.city, "abcdefgh");
 		fill(shipping.zipCode, "12AB3");
 		btnClick(shipping.continueTobilling);		
+		waitForPageToLoad(timeoutInSeconds);
 	   
 	}
 
@@ -154,6 +157,7 @@ public class ShippingPage extends BaseClass{
 		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shipping.preOrdercheckOut);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shipping.checkoutIncart);
 		Thread.sleep(5000);

@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="109.241128">
-    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Shipping Page" time="109.241128">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="244.335132">
+    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Category Browser Page" time="47.910806">
+        <system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to Met Store.............................................passed
+And User click the product image............................................passed
+And User apply the filters in the left panel................................passed
+And User navigate to next page by clicking page numbers.....................passed
+Then User click the view all link...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the shopping cart page" time="106.852027">
+        <system-out><![CDATA[Given User is in metallica home page........................................passed
+When User add some products to cart.........................................passed
+And User change the product quantity........................................passed
+And User navigate to PDP by clicking product link...........................passed
+And User remove the product from cart.......................................passed
+Then User checkout as a guest...............................................passed
+And User login in cart page and checkout....................................passed
+And User logout and login again to check the cart products..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Shipping Page" time="89.572299">
         <system-out><![CDATA[Given User is in metallica home page........................................passed
 When User navigate to shipping page.........................................passed
 And User validate the mandatory fields......................................passed

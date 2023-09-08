@@ -1,7 +1,5 @@
 package org.stepdefinition;
 
-import java.awt.AWTException;
-
 import org.base.BaseClass;
 import org.elements.CategoryBrowserPageElements;
 import org.elements.HomePageElements;
@@ -47,10 +45,12 @@ public class ShoppingCartPage extends BaseClass{
 	    btnClick(shopping.closeCart);
 	    
 		btnClick(category.shop);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		scroll();
 		
 		btnClick(shopping.secondProduct);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(shopping.productSize);
 		waitForPageToLoad(timeoutInSeconds);
@@ -59,6 +59,7 @@ public class ShoppingCartPage extends BaseClass{
 		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(shopping.checkOut);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	}
 
@@ -119,9 +120,11 @@ public class ShoppingCartPage extends BaseClass{
 		
 		fill(shopping.cartPassword, "Metallica@2");
 	   
-		btnClick(shopping.userCheckout);	
+		btnClick(shopping.userCheckout);
+		waitForPageToLoad(timeoutInSeconds);
 		
 	    btnClick(shopping.backToCart);
+	    waitForPageToLoad(timeoutInSeconds);
 
 		
 	}
@@ -134,12 +137,14 @@ public class ShoppingCartPage extends BaseClass{
 		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(login.logoutButton);
+	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(login.userName, "andrewroobanraaj@gmail.com");
 		fill(login.password, "Metallica@2");
 		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(login.loginButton);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		btnClick(home.cartIcon);
 		waitForPageToLoad(timeoutInSeconds);

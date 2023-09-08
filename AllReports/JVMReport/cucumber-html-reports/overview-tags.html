@@ -49,28 +49,28 @@ $(document).ready(function() {
   $(document).ready(function() {
 
     var chartData = {
-        labels:  [ "@shippingpage", ] ,
+        labels:  [ "@categorybrowserpage",  "@shippingpage",  "@shoppingcartpage", ] ,
         datasets: [
             {
                 label: "Passed",
                 backgroundColor: "#92DD96",
-                data:  [ 100.00, ]             },
+                data:  [ 100.00,  100.00,  100.00, ]             },
             {
                 label: "Failed",
                 backgroundColor: "#F2928C",
-                data:  [ 0.00, ]             },
+                data:  [ 0.00,  0.00,  0.00, ]             },
             {
                 label: "Skipped",
                 backgroundColor: "#8AF",
-                data:  [ 0.00, ]             },
+                data:  [ 0.00,  0.00,  0.00, ]             },
             {
                 label: "Pending",
                 backgroundColor: "#F5F28F",
-                data:  [ 0.00, ]             },
+                data:  [ 0.00,  0.00,  0.00, ]             },
             {
                 label: "Undefined",
                 backgroundColor: "#F5B975",
-                data:  [ 0.00, ]             }
+                data:  [ 0.00,  0.00,  0.00, ]             }
         ]
     };
 
@@ -129,7 +129,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>METALLICA APPLICATION</td>
-            <td>07 Sep 2023, 15:17</td>
+            <td>08 Sep 2023, 11:33</td>
     </tr>
   </tbody>
 </table>
@@ -191,6 +191,23 @@ $(document).ready(function() {
 
   <tbody>
           <tr>
+        <td class="tagname"><a href="report-tag_3116444088.html">@categorybrowserpage</a></td>
+
+        <td      class="passed"    >5</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">5</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="32632887500">32.632</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
         <td class="tagname"><a href="report-tag_151935356.html">@shippingpage</a></td>
 
         <td      class="passed"    >9</td>
@@ -204,7 +221,24 @@ $(document).ready(function() {
         <td >0</td>
         <td class="total">1</td>
 
-        <td class="duration" data-value="72980792600">1:12.980</td>
+        <td class="duration" data-value="77556403000">1:17.556</td>
+        <td class="passed">Passed</td>
+      </tr>
+          <tr>
+        <td class="tagname"><a href="report-tag_3618363222.html">@shoppingcartpage</a></td>
+
+        <td      class="passed"    >7</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">7</td>
+
+        <td  class="passed"    >1</td>
+        <td >0</td>
+        <td class="total">1</td>
+
+        <td class="duration" data-value="93167594100">1:33.167</td>
         <td class="passed">Passed</td>
       </tr>
       </tbody>
@@ -212,19 +246,19 @@ $(document).ready(function() {
   <tfoot class="total">
     <tr>
       <td></td>
-      <td>9</td>
+      <td>21</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
       <td>0</td>
-      <td>9</td>
+      <td>21</td>
 
-      <td>1</td>
+      <td>3</td>
       <td>0</td>
-      <td>1</td>
+      <td>3</td>
 
-      <td class="duration">1:12.980</td>
-      <td>1</td>
+      <td class="duration">3:23.356</td>
+      <td>3</td>
     </tr>
     <tr>
       <td></td>
