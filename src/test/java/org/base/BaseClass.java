@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +28,12 @@ public class BaseClass {
 		
 		driver=new ChromeDriver();
 
+	}
+	
+	public static void alert() {
+		
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
 	}
 	
 	public static void loadUrl(String url) {
@@ -189,7 +196,7 @@ public class BaseClass {
         } while (!pageLoadState.equals("complete"));
 
     }
-	
+
 }
 
 

@@ -21,6 +21,10 @@ public class HomePageElements extends BaseClass{
 		@FindBy(id="Layer_1")
 		public WebElement homePage;
 		
+		//Back to Home page from  user profile page
+		@FindBy(xpath="(//a[@title='Metallica Home'])[1]")
+		public WebElement toHomePage;
+		
 		//Click Search Menu
 		@FindBy(className="svg-menu-search-dims")
 		public WebElement searchMenu;

@@ -41,6 +41,10 @@ public class LoginElements extends BaseClass{
 	//To check user is in Invalid Credential page
 	@FindBy(xpath="//div[@class='error-form']")
 	public WebElement invalidCredentials;
+	
+	//To check the email is already taken error is displayed
+	@FindBy(xpath="//div[text()='An account for this email address already exists. To reset your password, return to the login page and click the “Forgot Password?” link.']")
+	public WebElement mailAlreadyTaken;
 
 	
 	

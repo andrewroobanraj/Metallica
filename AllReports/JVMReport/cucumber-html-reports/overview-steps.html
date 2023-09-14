@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="js/Chart.min.js"></script>
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
 <link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
 <link rel="stylesheet" href="css/font-awesome.min.css"/>
 <link rel="shortcut icon" href="images/favicon.png"/>
 
-<script type="text/javascript">
+<script>
 $(document).ready(function() {
     // this will tell tablesorter to try looking for the data-value attribute
     // if present, it'll sort by that instead
@@ -41,7 +41,6 @@ $(document).ready(function() {
 
 
 
-  
 <title>Cucumber Reports  - Steps Overview</title>
 
 </head>
@@ -52,10 +51,10 @@ $(document).ready(function() {
     <div class="collapse navbar-collapse">
       <p class="navbar-text navbar-left">Cucumber Report</p>
       <ul class="nav navbar-nav navbar-right">
-                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
         <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
         <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
-                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
       </ul>
     </div>
   </div>
@@ -64,35 +63,35 @@ $(document).ready(function() {
 
 <div class="container-fluid">
   <div class="col-md-5 col-md-offset-1">
-    
+
 <table class="table table-bordered" id="build-info">
   <thead>
     <tr>
       <th>Project</th>
-            <th>Date</th>
+      <th>Date</th>
     </tr>
   </thead>
   <tbody>
     <tr class="info">
       <td>METALLICA APPLICATION</td>
-            <td>08 Sep 2023, 11:33</td>
+      <td>08 Sep 2023, 16:32</td>
     </tr>
   </tbody>
 </table>
 
   </div>
   <div class="col-md-3 col-md-offset-2">
-      </div>
+  </div>
 </div>
 
 
 <div id="report-lead" class="container-fluid">
   <div class="col-md-10 col-md-offset-1">
     <h2>Steps Statistics</h2>
-          <p>The following graph shows step statistics for this build. Below list is based on results.
+      <p>The following graph shows step statistics for this build. Below list is based on results.
  step does not provide information about result then is not listed below.
  Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
-      </div>
+  </div>
 </div>
 
 <div class="container-fluid" id="report">
@@ -112,191 +111,63 @@ $(document).ready(function() {
         </thead>
 
         <tbody>
-                      <tr>
-              <td class="location">CategoryBrowserPage.user_apply_the_filters_in_the_left_panel()</td>
+            <tr>
+              <td class="location">Login.user_click_Login_button()</td>
               <td>1</td>
-              <td class="duration" data-value="13686187300">13.686</td>
-              <td class="duration" data-value="13686187300">13.686</td>
-              <td class="duration" data-value="13686187300">13.686</td>
+              <td class="duration" data-value="6008056600">6.008</td>
+              <td class="duration" data-value="6008056600">6.008</td>
+              <td class="duration" data-value="6008056600">6.008</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
-              <td class="location">CategoryBrowserPage.user_click_the_product_image()</td>
+            <tr>
+              <td class="location">Login.user_click_Logout()</td>
               <td>1</td>
-              <td class="duration" data-value="10397730300">10.397</td>
-              <td class="duration" data-value="10397730300">10.397</td>
-              <td class="duration" data-value="10397730300">10.397</td>
+              <td class="duration" data-value="11566047900">11.566</td>
+              <td class="duration" data-value="11566047900">11.566</td>
+              <td class="duration" data-value="11566047900">11.566</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
-              <td class="location">CategoryBrowserPage.user_click_the_view_all_link()</td>
+            <tr>
+              <td class="location">Login.user_enter_valid_userName_and_valid_Password()</td>
               <td>1</td>
-              <td class="duration" data-value="3685180200">3.685</td>
-              <td class="duration" data-value="3685180200">3.685</td>
-              <td class="duration" data-value="3685180200">3.685</td>
+              <td class="duration" data-value="518733100">0.518</td>
+              <td class="duration" data-value="518733100">0.518</td>
+              <td class="duration" data-value="518733100">0.518</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
-              <td class="location">CategoryBrowserPage.user_navigate_to_Met_Store()</td>
+            <tr>
+              <td class="location">Login.user_navigate_to_login_page()</td>
               <td>1</td>
-              <td class="duration" data-value="1449726100">1.449</td>
-              <td class="duration" data-value="1449726100">1.449</td>
-              <td class="duration" data-value="1449726100">1.449</td>
+              <td class="duration" data-value="11196150600">11.196</td>
+              <td class="duration" data-value="11196150600">11.196</td>
+              <td class="duration" data-value="11196150600">11.196</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
-              <td class="location">CategoryBrowserPage.user_navigate_to_next_page_by_clicking_page_numbers()</td>
+            <tr>
+              <td class="location">Login.user_should_be_in_a_dashboard_page()</td>
               <td>1</td>
-              <td class="duration" data-value="3414063600">3.414</td>
-              <td class="duration" data-value="3414063600">3.414</td>
-              <td class="duration" data-value="3414063600">3.414</td>
+              <td class="duration" data-value="182744700">0.182</td>
+              <td class="duration" data-value="182744700">0.182</td>
+              <td class="duration" data-value="182744700">0.182</td>
               <td class="passed">100.00%</td>
             </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_check_shipping_method_label_for_Pre_Order_product()</td>
-              <td>1</td>
-              <td class="duration" data-value="35875115300">35.875</td>
-              <td class="duration" data-value="35875115300">35.875</td>
-              <td class="duration" data-value="35875115300">35.875</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_click_the_Continue_to_billing_button()</td>
-              <td>1</td>
-              <td class="duration" data-value="6586756300">6.586</td>
-              <td class="duration" data-value="6586756300">6.586</td>
-              <td class="duration" data-value="6586756300">6.586</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_click_the_Is_this_a_Gift_checkbox()</td>
-              <td>1</td>
-              <td class="duration" data-value="6495603000">6.495</td>
-              <td class="duration" data-value="6495603000">6.495</td>
-              <td class="duration" data-value="6495603000">6.495</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_click_the_Use_this_address_checkbox()</td>
-              <td>1</td>
-              <td class="duration" data-value="2273291700">2.273</td>
-              <td class="duration" data-value="2273291700">2.273</td>
-              <td class="duration" data-value="2273291700">2.273</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_navigate_to_shipping_page()</td>
-              <td>1</td>
-              <td class="duration" data-value="21117965500">21.117</td>
-              <td class="duration" data-value="21117965500">21.117</td>
-              <td class="duration" data-value="21117965500">21.117</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_select_address_from_saved_address_dropdown()</td>
-              <td>1</td>
-              <td class="duration" data-value="369564300">0.369</td>
-              <td class="duration" data-value="369564300">0.369</td>
-              <td class="duration" data-value="369564300">0.369</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_select_the_Shipping_Method()</td>
-              <td>1</td>
-              <td class="duration" data-value="1173273600">1.173</td>
-              <td class="duration" data-value="1173273600">1.173</td>
-              <td class="duration" data-value="1173273600">1.173</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_validate_the_mandatory_fields()</td>
-              <td>1</td>
-              <td class="duration" data-value="1871816800">1.871</td>
-              <td class="duration" data-value="1871816800">1.871</td>
-              <td class="duration" data-value="1871816800">1.871</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShippingPage.user_validate_the_shipping_address_fields()</td>
-              <td>1</td>
-              <td class="duration" data-value="1793016500">1.793</td>
-              <td class="duration" data-value="1793016500">1.793</td>
-              <td class="duration" data-value="1793016500">1.793</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShoppingCartPage.user_add_some_products_to_cart()</td>
-              <td>1</td>
-              <td class="duration" data-value="31232712000">31.232</td>
-              <td class="duration" data-value="31232712000">31.232</td>
-              <td class="duration" data-value="31232712000">31.232</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShoppingCartPage.user_change_the_product_quantity()</td>
-              <td>1</td>
-              <td class="duration" data-value="9117463600">9.117</td>
-              <td class="duration" data-value="9117463600">9.117</td>
-              <td class="duration" data-value="9117463600">9.117</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShoppingCartPage.user_checkout_as_a_guest()</td>
-              <td>1</td>
-              <td class="duration" data-value="8924335300">8.924</td>
-              <td class="duration" data-value="8924335300">8.924</td>
-              <td class="duration" data-value="8924335300">8.924</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShoppingCartPage.user_login_in_cart_page_and_checkout()</td>
-              <td>1</td>
-              <td class="duration" data-value="10414250200">10.414</td>
-              <td class="duration" data-value="10414250200">10.414</td>
-              <td class="duration" data-value="10414250200">10.414</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShoppingCartPage.user_logout_and_login_again_to_check_the_cart_products()</td>
-              <td>1</td>
-              <td class="duration" data-value="17079175100">17.079</td>
-              <td class="duration" data-value="17079175100">17.079</td>
-              <td class="duration" data-value="17079175100">17.079</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShoppingCartPage.user_navigate_to_PDP_by_clicking_product_link()</td>
-              <td>1</td>
-              <td class="duration" data-value="4752247100">4.752</td>
-              <td class="duration" data-value="4752247100">4.752</td>
-              <td class="duration" data-value="4752247100">4.752</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
-              <td class="location">ShoppingCartPage.user_remove_the_product_from_cart()</td>
-              <td>1</td>
-              <td class="duration" data-value="11647410800">11.647</td>
-              <td class="duration" data-value="11647410800">11.647</td>
-              <td class="duration" data-value="11647410800">11.647</td>
-              <td class="passed">100.00%</td>
-            </tr>
-                      <tr>
+            <tr>
               <td class="location">StepDefinition.user_is_in_metallica_home_page()</td>
-              <td>3</td>
-              <td class="duration" data-value="13606306600">13.606</td>
-              <td class="duration" data-value="13606306600">15.128</td>
-              <td class="duration" data-value="40818919800">40.818</td>
+              <td>1</td>
+              <td class="duration" data-value="21765415400">21.765</td>
+              <td class="duration" data-value="21765415400">21.765</td>
+              <td class="duration" data-value="21765415400">21.765</td>
               <td class="passed">100.00%</td>
             </tr>
-                  </tbody>
+        </tbody>
 
         <tfoot class="total">
           <tr>
-            <td>22</td>
-            <td>24</td>
-            <td class="duration">10.173</td>
-            <td class="duration">40.818</td>
-            <td class="duration">4:4.175</td>
+            <td>6</td>
+            <td>6</td>
+            <td class="duration">8.539</td>
+            <td class="duration">21.765</td>
+            <td class="duration">51.237</td>
             <td>Totals</td>
           </tr>
         </tfoot>

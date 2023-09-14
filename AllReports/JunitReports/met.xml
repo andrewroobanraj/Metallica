@@ -1,36 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="244.335132">
-    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Category Browser Page" time="47.910806">
-        <system-out><![CDATA[Given User is in metallica home page........................................passed
-When User navigate to Met Store.............................................passed
-And User click the product image............................................passed
-And User apply the filters in the left panel................................passed
-And User navigate to next page by clicking page numbers.....................passed
-Then User click the view all link...........................................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="51.433683">
+<testcase classname="To validate the functionality of Metallica application" name="To validate login &amp; logout using valid userName and valid Password" time="51.433683">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to login page............................................passed
+And User enter valid userName and valid Password............................passed
+And User click Login button.................................................passed
+Then User should be in a dashboard page.....................................passed
+And User click Logout.......................................................passed
 ]]></system-out>
-    </testcase>
-    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the shopping cart page" time="106.852027">
-        <system-out><![CDATA[Given User is in metallica home page........................................passed
-When User add some products to cart.........................................passed
-And User change the product quantity........................................passed
-And User navigate to PDP by clicking product link...........................passed
-And User remove the product from cart.......................................passed
-Then User checkout as a guest...............................................passed
-And User login in cart page and checkout....................................passed
-And User logout and login again to check the cart products..................passed
-]]></system-out>
-    </testcase>
-    <testcase classname="To validate the functionality of Metallica application" name="To validate all the fields in the Shipping Page" time="89.572299">
-        <system-out><![CDATA[Given User is in metallica home page........................................passed
-When User navigate to shipping page.........................................passed
-And User validate the mandatory fields......................................passed
-And User validate the shipping address fields...............................passed
-And User select address from saved address dropdown.........................passed
-And User click the Use this address checkbox................................passed
-And User click the Is this a Gift checkbox..................................passed
-Then User select the Shipping Method........................................passed
-And User check shipping method label for Pre Order product..................passed
-And User click the Continue to billing button...............................passed
-]]></system-out>
-    </testcase>
+</testcase>
 </testsuite>

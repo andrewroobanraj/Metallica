@@ -30,27 +30,55 @@ public class MyAccountPage extends BaseClass{
 	    
 	}
 
+	
 	@When("User click all the links in my account page")
 	public void user_click_all_the_links_in_my_account_page()  {
 		
 		
 		btnClick(myAccount.personalInfo);
 		waitForPageToLoad(timeoutInSeconds);
+		System.out.println("The personal information is viewed");
 		
 	    btnClick(myAccount.myAccount);
 	    
 	    btnClick(myAccount.addresses);
 	    waitForPageToLoad(timeoutInSeconds);
 	    
+	    btnClick(myAccount.addNewAddress);
+	    waitForPageToLoad(timeoutInSeconds);
+	    
+	    fill(myAccount.addressName, "Palayamkottai");
+	    fill(myAccount.address1, "46,South Street");
+	    fill(myAccount.firstName, "Andrew");
+	    fill(myAccount.lastName, "Raj");
+	    fill(myAccount.city, "Tirunelveli");
+	    fill(myAccount.zipcode, "627002");
+	    myAccount.country();
+	    fill(myAccount.state, "TamilNadu");
+	    fill(myAccount.phone, "7010537032");
+	    
+	    btnClick(myAccount.applyButton);
+	    waitForPageToLoad(timeoutInSeconds);
+	    System.out.println("New Address is added");
+	    
+	    btnClick(myAccount.deleteAddress);
+	    
+	    alert();
+	    
+	    waitForPageToLoad(timeoutInSeconds);
+	    System.out.println("Address Deleted");
+	    	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.orderHis);
 	    waitForPageToLoad(timeoutInSeconds);
+	    System.out.println("User is navigated to Order details page");	    
 	    
 	    btnClick(myAccount.myAccount);
 
 	    btnClick(myAccount.paySetting);
 	    waitForPageToLoad(timeoutInSeconds);
+	    System.out.println("User is navigated to Payment details page");
 	    
 	    btnClick(myAccount.myAccount);
 
@@ -71,19 +99,26 @@ public class MyAccountPage extends BaseClass{
 
 	    btnClick(myAccount.vinylClub);
 	    waitForPageToLoad(timeoutInSeconds);
+	    
+	    btnClick(myAccount.myAccount);
 	    	    
-	}
-
-	@Then("User back to My Account page")
-	public void user_back_to_My_Account_page() {
+	} 
+	
+	
+	@Then("User click download my data button")
+	public void user_click_download_my_data_button() {
 		
-		btnClick(myAccount.myAccount);
+		btnClick(myAccount.downloadMyData);
 		
 		String url = driver.getCurrentUrl();
-		Assert.assertTrue("To check the URL", url.contains("https://www.metallica.com/account/"));
-		System.out.println("User is in My Account Page");
-		toQuit();
-			
-	}
+		Assert.assertTrue(url.contains("https://www.metallica.com/account/"));
+		System.out.println("User is in My Accound Page");
+		
+		myAccount.downloadResult();
+		
+		toClose();	
+		
+	}	
+	
 
 }

@@ -20,271 +20,61 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
-  "name": "To validate all the fields in the Category Browser Page",
+  "name": "To validate login \u0026 logout using valid userName and valid Password",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@categorybrowserpage"
+      "name": "@login"
     }
   ]
 });
 formatter.step({
-  "name": "User navigate to Met Store",
+  "name": "User navigate to login page",
   "keyword": "When "
 });
 formatter.match({
-  "location": "CategoryBrowserPage.user_navigate_to_Met_Store()"
+  "location": "Login.user_navigate_to_login_page()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User click the product image",
+  "name": "User enter valid userName and valid Password",
   "keyword": "And "
 });
 formatter.match({
-  "location": "CategoryBrowserPage.user_click_the_product_image()"
+  "location": "Login.user_enter_valid_userName_and_valid_Password()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User apply the filters in the left panel",
+  "name": "User click Login button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "CategoryBrowserPage.user_apply_the_filters_in_the_left_panel()"
+  "location": "Login.user_click_Login_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User navigate to next page by clicking page numbers",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "CategoryBrowserPage.user_navigate_to_next_page_by_clicking_page_numbers()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User click the view all link",
+  "name": "User should be in a dashboard page",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "CategoryBrowserPage.user_click_the_view_all_link()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "User is in metallica home page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "StepDefinition.user_is_in_metallica_home_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "To validate all the fields in the shopping cart page",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@shoppingcartpage"
-    }
-  ]
-});
-formatter.step({
-  "name": "User add some products to cart",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "ShoppingCartPage.user_add_some_products_to_cart()"
+  "location": "Login.user_should_be_in_a_dashboard_page()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User change the product quantity",
+  "name": "User click Logout",
   "keyword": "And "
 });
 formatter.match({
-  "location": "ShoppingCartPage.user_change_the_product_quantity()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User navigate to PDP by clicking product link",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShoppingCartPage.user_navigate_to_PDP_by_clicking_product_link()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User remove the product from cart",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShoppingCartPage.user_remove_the_product_from_cart()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User checkout as a guest",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "ShoppingCartPage.user_checkout_as_a_guest()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User login in cart page and checkout",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShoppingCartPage.user_login_in_cart_page_and_checkout()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User logout and login again to check the cart products",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShoppingCartPage.user_logout_and_login_again_to_check_the_cart_products()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.background({
-  "name": "",
-  "description": "",
-  "keyword": "Background"
-});
-formatter.step({
-  "name": "User is in metallica home page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "StepDefinition.user_is_in_metallica_home_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.scenario({
-  "name": "To validate all the fields in the Shipping Page",
-  "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@shippingpage"
-    }
-  ]
-});
-formatter.step({
-  "name": "User navigate to shipping page",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "ShippingPage.user_navigate_to_shipping_page()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User validate the mandatory fields",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShippingPage.user_validate_the_mandatory_fields()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User validate the shipping address fields",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShippingPage.user_validate_the_shipping_address_fields()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User select address from saved address dropdown",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShippingPage.user_select_address_from_saved_address_dropdown()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User click the Use this address checkbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShippingPage.user_click_the_Use_this_address_checkbox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User click the Is this a Gift checkbox",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShippingPage.user_click_the_Is_this_a_Gift_checkbox()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User select the Shipping Method",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "ShippingPage.user_select_the_Shipping_Method()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User check shipping method label for Pre Order product",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShippingPage.user_check_shipping_method_label_for_Pre_Order_product()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "User click the Continue to billing button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "ShippingPage.user_click_the_Continue_to_billing_button()"
+  "location": "Login.user_click_Logout()"
 });
 formatter.result({
   "status": "passed"

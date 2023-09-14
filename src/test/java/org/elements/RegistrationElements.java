@@ -95,4 +95,11 @@ public class RegistrationElements extends BaseClass{
 	@FindBy(xpath="//a[@title='Register']")
 	public WebElement register;
 	
+	//To check the error message
+	@FindBy(xpath="//div[@class='form-caption form-field-subcopy error-message']")
+	public WebElement mailErrorMsg;
+	
+	//To check the required field error message
+	@FindBy(xpath="//span[@id='dwfrm_profile_customer_birthday-error']")
+	public WebElement requiredError;
 }
