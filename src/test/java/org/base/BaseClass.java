@@ -154,7 +154,7 @@ public class BaseClass {
         jsExecutor.executeScript("window.scrollTo(0,0)");
 	}
 	
-	public void scroll() {
+	public void scrollToProducts() {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollTo(0, 750)");
 	}

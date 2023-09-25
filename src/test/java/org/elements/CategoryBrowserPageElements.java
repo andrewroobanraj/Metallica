@@ -17,6 +17,22 @@ public class CategoryBrowserPageElements extends BaseClass{
 		@FindBy(xpath="//img[@alt='SHOP ALL']")
 		public WebElement shopAll;
 
+		//To check the product tile
+		@FindBy(xpath="//ul[@id='search-result-items row']")
+		public WebElement productTile;
+		
+		//To check the product image 
+		@FindBy(xpath="(//img[@class='js-blazy b-loaded'])[1]")
+		public WebElement productImage;
+		
+		//To check the product price
+		@FindBy(xpath="(//span[@class='product-sales-price'])[1]")
+		public WebElement productPrice;
+		
+		//To check the product badge
+		@FindBy(xpath="(//div[@class='content-asset badge'])[1]")
+		public WebElement productBadge;
+		
 		//To click the product image
 		@FindBy(xpath="//a[@title='Go to Product: 72 Seasons Silver Ring']")
 		public WebElement product;
@@ -60,6 +76,10 @@ public class CategoryBrowserPageElements extends BaseClass{
 		//To navigate page 3
 		@FindBy(xpath="//a[@class='page-3']")
 		public WebElement pageNo3;
+		
+		//To check the current page no
+		@FindBy(xpath="//li[@title='Currently on page: 3']")
+		public WebElement currentPageNo;
 		
 		//To click view all link
 		@FindBy(xpath="//a[@class='view-all']")

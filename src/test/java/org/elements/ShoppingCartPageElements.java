@@ -38,10 +38,6 @@ public class ShoppingCartPageElements extends BaseClass{
 	@FindBy(xpath="(//div[@class='c-product-quantity__button js-quantity-quantity__button js-product-quantity__button--up c-product-quantity__button--up product-quantity-up'])[2]")
 	public WebElement productQty2;
 	
-	//Navigate to PDP from cart page
-	@FindBy(xpath="(//a[@title='Go to Product: M Logo 72 Seasons Tracks T-Shirts - Medium'])[4]")
-	public WebElement toPDP;
-	
 	//To remove product from cart page
 	@FindBy(xpath="(//button[@class='button-text'])[1]")
 	public WebElement removeCart;
@@ -70,4 +66,23 @@ public class ShoppingCartPageElements extends BaseClass{
 	@FindBy(xpath="(//button[@class='add-to-cart button button--cta checkout login cart-button'])")
 	public WebElement userCheckout;
 	
+	//To check the Sub total
+	@FindBy(xpath="//dt[@class='order-subtotal-label']")
+	public WebElement subTotal;
+	
+	//To check the product in cart page
+	@FindBy(xpath="(//a[@title='Go to Product: M Logo 72 Seasons Tracks T-Shirts - Medium'])[4]")
+	public WebElement product1Cart;
+	
+	//To check the second product in cart page
+	@FindBy(xpath="(//a[@title='Go to Product: Band 72 Seasons Tracks T-Shirt - Medium'])[4]")
+	public WebElement product2Cart;
+	
+	//To check the cart quantity
+	@FindBy(xpath="//input[@value='2']")
+	public WebElement cartQty;
+	
+	//To check the shopping cart is Empty
+	@FindBy(xpath="//h3[text()='Your Shopping Cart is Empty']")
+	public WebElement cartEmpty;
 }

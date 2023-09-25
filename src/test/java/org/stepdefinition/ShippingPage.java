@@ -1,5 +1,6 @@
 package org.stepdefinition;
 
+import org.testng.AssertJUnit;
 import java.awt.AWTException;
 
 import org.base.BaseClass;
@@ -21,10 +22,9 @@ public class ShippingPage extends BaseClass{
 	
 	int timeoutInSeconds = 10;
 
-	
-	@When("User navigate to shipping page")
-	public void user_navigate_to_shipping_page() throws AWTException {
-		
+	@When("User Add an item to cart")
+	public void user_Add_an_item_to_cart() throws AWTException {
+
 		btnClick(home.searchMenu);
 		waitForPageToLoad(timeoutInSeconds);
 	    		
@@ -41,8 +41,13 @@ public class ShippingPage extends BaseClass{
 		
 		btnClick(product.addTocart);
 		waitForPageToLoad(timeoutInSeconds);
+		
+	}
+
+	@When("User Checkout from cart")
+	public void user_Checkout_from_cart() {
 	    
-	    btnClick(shopping.checkOut);
+		btnClick(shopping.checkOut);
 	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(shopping.guestmail, "andrewroobanraaj@gmail.com");
@@ -51,88 +56,122 @@ public class ShippingPage extends BaseClass{
 	   
 		btnClick(shopping.userCheckout);
 		waitForPageToLoad(timeoutInSeconds);
-	    
+		
 	}
 
-	@When("User validate the mandatory fields")
-	public void user_validate_the_mandatory_fields() {
-		
+	@Then("User Skips the mandatory fields and submit")
+	public void user_Skips_the_mandatory_fields_and_submit() {
+	   
 		fieldClear(shipping.firstName);
 	    fieldClear(shipping.lastName);
 	    fieldClear(shipping.address1);
 	    fieldClear(shipping.city);
 	    fieldClear(shipping.zipCode);
 	    fieldClear(shipping.phone);
+	   
 	    btnClick(shipping.continueTobilling);
 	    waitForPageToLoad(timeoutInSeconds);
 	    
+	    AssertJUnit.assertTrue(shipping.mandatoryError.isDisplayed());
+	    System.out.println("Mandatory Error occurs to fill the  mandatory fields");
+	    
+	    toClose();
 	}
 
-	@When("User validate the shipping address fields")
-	public void user_validate_the_shipping_address_fields() {
+	@Then("User click continue to billing button with valid shipping address")
+	public void user_click_continue_to_billing_button_with_valid_shipping_address() throws InterruptedException {
+	    
+		Thread.sleep(3000);
 		
-		fill(shipping.city, "abcdefgh");
-		fill(shipping.zipCode, "12AB3");
 		btnClick(shipping.continueTobilling);		
 		waitForPageToLoad(timeoutInSeconds);
-	   
+		
+		AssertJUnit.assertTrue(shipping.keepOriginal.isDisplayed());
+		System.out.println("Keep Original address Popup is displayed to navigate billing page");
+		
+		toClose();
 	}
 
-	@When("User select address from saved address dropdown")
-	public void user_select_address_from_saved_address_dropdown()  {
-		
+	@When("User enter invalid values in zipcode,country and state fields")
+	public void user_enter_invalid_values_in_zipcode_country_and_state_fields() throws InterruptedException {
+	    
 		fieldClear(shipping.city);
 		fieldClear(shipping.zipCode);
 		
-		shipping.addressDropdown();
-		   
+		fill(shipping.city, "abcdefgh");
+		fill(shipping.zipCode, "12AB3");
+		
+		Thread.sleep(3000);
+				
 	}
 
-	@When("User click the Use this address checkbox")
-	public void user_click_the_Use_this_address_checkbox() {
-		
-		btnClick(shipping.addressCheckbox);
+	@Then("User see the error message for invalid address")
+	public void user_see_the_error_message_for_invalid_address() {
+	   
+		btnClick(shipping.continueTobilling);		
 		waitForPageToLoad(timeoutInSeconds);
 		
-		btnClick(shipping.addressCheckbox);
-		waitForPageToLoad(timeoutInSeconds);
+		AssertJUnit.assertTrue(shipping.mandatoryError.isDisplayed());
+		System.out.println("Error occurs to enter valid Address");
+		
+		toClose();
+		
+	}
+
+	@Then("User see the saved address in dropdown")
+	public void user_see_the_saved_address_in_dropdown() {
 	    
+		AssertJUnit.assertTrue(shipping.savedAddress.isDisplayed());
+		System.out.println("Saved addresses are displayed in the dropdown");
+	
+		toClose();
+		
 	}
 
-	@When("User click the Is this a Gift checkbox")
+	@Then("User click the Use this address for billing checkbox")
+	public void user_click_the_Use_this_address_for_billing_checkbox() {
+	    
+		AssertJUnit.assertTrue(shipping.addressCheckbox.isSelected());
+		System.out.println("Use this address for billing checkbox is selected");
+		
+		toClose();
+		
+	}
+	
+	@Then("User click the Is this a Gift checkbox")
 	public void user_click_the_Is_this_a_Gift_checkbox() throws InterruptedException  {
 	    
 		btnClick(shipping.giftCheckbox);
 		
-		fill(shipping.giftMessage, "Hii Buddy");
-		waitForPageToLoad(timeoutInSeconds);
+		AssertJUnit.assertTrue(shipping.giftCheckbox.isSelected());	
+		System.out.println("Is This a Gift Checkbox is selected");
 		
-		btnClick(shipping.giftCheckbox);
-		Thread.sleep(5000);
+		toClose();
+	}
+
+	@Then("User enter the shipping address")
+	public void user_enter_the_shipping_address() {
+	   
+		AssertJUnit.assertTrue(shipping.shipMethodlist.isDisplayed());
+		System.out.println("Shipping Method list is displayed after enter the address");
+		
+		toClose();
 		
 	}
 
-	@Then("User select the Shipping Method")
-	public void user_select_the_Shipping_Method() {
+	@Then("User check the ship method for in stock product")
+	public void user_check_the_ship_method_for_in_stock_product() {
+	    
+		AssertJUnit.assertTrue(shipping.shipMethodlabel1.isDisplayed());
+		System.out.println("Shipping method for instock product is displayed as 'SHIP NOW' ");
 		
-		Assert.assertTrue("ship method for normal product", shipping.shipMethodlabel1.isDisplayed());
+		toClose();
 		
-		btnClick(shipping.shippingMethod);
-		waitForPageToLoad(timeoutInSeconds);
-	   
 	}
 
-	@Then("User check shipping method label for Pre Order product")
-	public void user_check_shipping_method_label_for_Pre_Order_product() throws AWTException, InterruptedException {
-		
-		scrollUp();
-		
-		btnClick(shopping.backToCart);
-		waitForPageToLoad(timeoutInSeconds);
-		
-		btnClick(shopping.removeCart);
-		waitForPageToLoad(timeoutInSeconds);
-	   
+	@When("User add Pre order product to cart")
+	public void user_add_Pre_order_product_to_cart() throws AWTException, InterruptedException {
+	    
 		btnClick(home.searchMenu);
 		waitForPageToLoad(timeoutInSeconds);
 	    		
@@ -144,9 +183,6 @@ public class ShippingPage extends BaseClass{
 		
 		waitForPageToLoad(timeoutInSeconds);
 		
-		//btnClick(product.productSize);
-		//waitForPageToLoad(timeoutInSeconds);
-		
 		btnClick(product.addTocart);
 		waitForPageToLoad(timeoutInSeconds);
 		
@@ -155,33 +191,92 @@ public class ShippingPage extends BaseClass{
 		
 		btnClick(product.preOrdercart);
 		waitForPageToLoad(timeoutInSeconds);
-		
-		btnClick(shipping.preOrdercheckOut);
-		waitForPageToLoad(timeoutInSeconds);
-		
-		btnClick(shipping.checkoutIncart);
-		Thread.sleep(5000);
 	
-		Assert.assertTrue("Shipping Method for Pre-Order", shipping.shipMethodlabel.isDisplayed());
+	}
+
+	@Then("User check the ship method pre order product")
+	public void user_check_the_ship_method_pre_order_product() throws InterruptedException {
+		
+		waitForPageToLoad(timeoutInSeconds);
+		Thread.sleep(3000);
+		
+		AssertJUnit.assertTrue(shipping.shipMethodlabel.isDisplayed());
+		System.out.println("Shipping method for Pre Order product is displayed as 'SHIP LATER' ");
+		
+		toClose();	    
+		
+	}
+	
+	@When("User select the shipping method")
+	public void user_select_the_shipping_method() throws InterruptedException {
+	    
+		Thread.sleep(3000);
+		
+		btnClick(shipping.shippingMethod);
+		waitForPageToLoad(timeoutInSeconds);
 		
 	}
 
-	@Then("User click the Continue to billing button")
-	public void user_click_the_Continue_to_billing_button()  {
-	   
+	@Then("User check the selected shipping method is reflected in order summary section")
+	public void user_check_the_selected_shipping_method_is_reflected_in_order_summary_section() throws InterruptedException {
+	    
+		String selectedShipMethod = shipping.selectedShipMethod.getText();
 		
-	    btnClick(shipping.continueTobilling);
-	    waitForPageToLoad(timeoutInSeconds);
-	    
-	    btnClick(shipping.keepOriginal);
-	    
-	    String url = driver.getCurrentUrl();
-	    Assert.assertTrue("To Check the url", url.contains("https://www.metallica.com/billing/"));
-	    
-	    System.out.println("After click the Continue to Billing button User is in Billing Page");
+		Thread.sleep(3000);
+		
+		String shipMethodInOrderSummary = shipping.shipMethodInOrderSummary.getText();
+		
+		String shipMethod = selectedShipMethod.substring(12);
+		
+		Assert.assertEquals(shipMethod, shipMethodInOrderSummary);
+		System.out.println("The Selected Shipping Method is Reflected in Order Summary Section");
+		
+		
+	}
 
-	    toQuit();
+	@Then("User check the Order total amount includes the shipping method rate")
+	public void user_check_the_Order_total_amount_includes_the_shipping_method_rate() {
+	    
+		String SubTotal = shipping.subTotal.getText();
+				
+		String shipMethodInOrderSummary = shipping.shipMethodInOrderSummary.getText();
 		
+		String OrderTotal = shipping.orderTotal.getText();
+		
+		String Rate1 =SubTotal.substring(1);
+		String Rate2 =shipMethodInOrderSummary.substring(1);
+		String Rate3 =OrderTotal.substring(1);
+		
+		double value1 = Double.parseDouble(Rate1);//SubTotal
+        double value2 = Double.parseDouble(Rate2);//ShipMethodRate
+        double value3 = Double.parseDouble(Rate3);//OrderTotal
+        
+        double sum = value1 + value2;
+        
+        AssertJUnit.assertEquals(value3, sum);
+        System.out.println("The Order total amount includes the Shipping Method Rate");
+        
+        toClose();		
+	 
+	}	
+	
+
+	@Then("User Click the Continue to billing button")
+	public void user_Click_the_Continue_to_billing_button() throws InterruptedException {
+	    
+		Thread.sleep(3000);
+		
+		btnClick(shipping.continueTobilling);
+		waitForPageToLoad(timeoutInSeconds);
+		
+		btnClick(shipping.keepOriginal);
+		waitForPageToLoad(timeoutInSeconds);
+		
+		String url = driver.getCurrentUrl();
+		Assert.assertTrue(url.contains("https://www.metallica.com/billing/"));
+		System.out.println("User navigated to Billing Page");
+		
+		toClose();
 	}
 
 }

@@ -74,6 +74,10 @@ public class ShippingPageElements extends BaseClass{
 			
 		}
 		
+		//Saved Address dropdown
+		@FindBy(id="dwfrm_singleshipping_addressList")
+		public WebElement savedAddress;
+		
 		//To select address check box
 		@FindBy(xpath="//input[@id='dwfrm_singleshipping_shippingAddress_useAsBillingAddress']")
 		public WebElement addressCheckbox;
@@ -109,5 +113,31 @@ public class ShippingPageElements extends BaseClass{
 		//To check the Label of shipping method for normal Product 
 		@FindBy(xpath="//div[@class='shipping-method-header normal-shipment-header']")
 		public WebElement shipMethodlabel1;
+		
+		//To check the mandatory error 
+		@FindBy(xpath="//span[@id='dwfrm_singleshipping_shippingAddress_addressFields_postal-error']")
+		public WebElement mandatoryError;
+		
+		//To check the shipping method list
+		@FindBy(xpath="//div[@id='shipping-method-list']")
+		public WebElement shipMethodlist;
+		
+		//To check ship method in order summary
+		@FindBy(xpath="//dd[@class='order-shipping-value  first ']")
+		public WebElement shipMethodInOrderSummary;
+		
+		//To check the ship method name
+		@FindBy(xpath="//label[@for='shipping-method-shqups-GND']")
+		public WebElement selectedShipMethod;
+		
+		//To get the sub total
+		@FindBy(xpath="//dd[@class='order-subtotal-value js-miniCartSubtotals']")
+		public WebElement subTotal;
+		
+		//To get order Total
+		@FindBy(xpath="//dd[@class='order-value order-total-value js-estimatedTotalUpdated']")
+		public WebElement orderTotal;
+		
+		
 
 }

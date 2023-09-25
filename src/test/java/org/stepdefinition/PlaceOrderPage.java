@@ -10,6 +10,7 @@ import org.elements.ProductDetailPageElements;
 import org.elements.ShippingPageElements;
 import org.elements.ShoppingCartPageElements;
 import org.junit.Assert;
+import org.testng.AssertJUnit;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,16 +26,15 @@ public class PlaceOrderPage extends BaseClass{
 	
 	int timeoutInSeconds = 10;
 	
-	@When("User navigate to place order page")
-	public void user_navigate_to_place_order_page() throws AWTException, InterruptedException {
-		
+	@When("User Add an product to cart page")
+	public void user_Add_an_product_to_cart_page() throws AWTException {
+
 		btnClick(home.searchMenu);
 		waitForPageToLoad(timeoutInSeconds);
 	    		
 		btnClick(product.search);
 		
 		fill(product.enterText, "72 SEASONS SILVER RING");
-		waitForPageToLoad(timeoutInSeconds);
 		
 		performEnter();
 		
@@ -45,8 +45,13 @@ public class PlaceOrderPage extends BaseClass{
 		
 		btnClick(product.addTocart);
 		waitForPageToLoad(timeoutInSeconds);
+		
+	}
+
+	@When("User checkout from cart")
+	public void user_checkout_from_cart() {
 	    
-	    btnClick(shopping.checkOut);
+		btnClick(shopping.checkOut);
 	    waitForPageToLoad(timeoutInSeconds);
 	    
 	    fill(shopping.guestmail, "andrewroobanraaj@gmail.com");
@@ -54,65 +59,33 @@ public class PlaceOrderPage extends BaseClass{
 		fill(shopping.cartPassword, "Metallica@2");
 	   
 		btnClick(shopping.userCheckout);
+		waitForPageToLoad(timeoutInSeconds);
+		
+	}
+	
+	@Then("User check the Use this address for billing checkbox is selected")
+	public void user_check_the_Use_this_address_for_billing_checkbox_is_selected() {
+	   
+		AssertJUnit.assertTrue(shipping.addressCheckbox.isSelected());
+		System.out.println("Use this address for billing checkbox is selected");
+	}
+	
+	@When("User select the International Shipping Address")
+	public void user_select_the_International_Shipping_Address() {
+	    
+		billing.internationalAddressDropdown();
+		waitForPageToLoad(timeoutInSeconds);
+	}
+
+	@When("User navigate to Place Order page")
+	public void user_navigate_to_Place_Order_page() throws InterruptedException {
+
 		Thread.sleep(3000);
-
-	    btnClick(shipping.continueTobilling);
-	    waitForPageToLoad(timeoutInSeconds);
-	    
-	    btnClick(shipping.keepOriginal);
-	    waitForPageToLoad(timeoutInSeconds);
-	    
-	    fill(billing.cardNumber, "4214 3602 2011 9592");
 		
-		fill(billing.securityCode, "098");
-		
-		fill(billing.nameOncard, "Andrew Rooban Raj S");
-		
-		billing.monthDropdown();
-		
-		billing.yearDropdown();
-		
-		btnClick(billing.billingSubmit);
+		btnClick(shipping.continueTobilling);
 		waitForPageToLoad(timeoutInSeconds);
-	    
-	}
-
-	@When("User click the edit cart link")
-	public void user_click_the_edit_cart_link() throws InterruptedException  {
 		
-		btnClick(placeorder.backTocart);
-		waitForPageToLoad(timeoutInSeconds);
-	    
-	    btnClick(shipping.checkoutIncart);
-	    Thread.sleep(3000);
-	    
-	    btnClick(shipping.continueTobilling);
-	    waitForPageToLoad(timeoutInSeconds);
-	    
-	    btnClick(shipping.keepOriginal);
-	    waitForPageToLoad(timeoutInSeconds);
-	    
-	    fill(billing.cardNumber, "4214 3602 2011 9592");
-		
-		fill(billing.securityCode, "098");
-		
-		fill(billing.nameOncard, "Andrew Rooban Raj S");
-		
-		billing.monthDropdown();
-		
-		billing.yearDropdown();
-		
-		btnClick(billing.saveCard);
-		
-		btnClick(billing.billingSubmit);
-		waitForPageToLoad(timeoutInSeconds);
-
-	}
-
-	@When("User click the edit button in payment and billing address fields")
-	public void user_click_the_edit_button_in_payment_and_billing_address_fields() {
-		
-		btnClick(placeorder.editBillingaddress);
+		btnClick(shipping.keepOriginal);
 		waitForPageToLoad(timeoutInSeconds);
 		
 		fill(billing.cardNumber, "4214 3602 2011 9592");
@@ -125,28 +98,81 @@ public class PlaceOrderPage extends BaseClass{
 		
 		billing.yearDropdown();
 		
-		btnClick(billing.saveCard);
-		
 		btnClick(billing.billingSubmit);
 		waitForPageToLoad(timeoutInSeconds);
-		
-		btnClick(placeorder.editPayment);
-		
-	    
 	}
 	
-	@Then("User redirected to billing page to edit the payment and billing address")
-	public void user_redirected_to_billing_page_to_edit_the_payment_and_billing_address() {
+	@Then("User check the shipping and billing address in the Place Order page")
+	public void user_check_the_shipping_and_billing_address_in_the_place_order_page() {
+	    
+		String shippingAddress = billing.shippingAdd.getText();
+		String billingAddress  = billing.billingAdd.getText();
+		
+		Assert.assertEquals(shippingAddress, billingAddress);
+		System.out.println("The Shipping address is used as the Billing Address");
+		
+		toClose();
+	}
+	
+	@Then("User click the edit cart link")
+	public void user_click_the_edit_cart_link() throws InterruptedException  {
+		
+		btnClick(placeorder.backTocart);
+		waitForPageToLoad(timeoutInSeconds);
 		
 		String url = driver.getCurrentUrl();
-		Assert.assertTrue("To check the user is in Place Order Page", url.contains("https://www.metallica.com/billing/"));
+		Assert.assertTrue(url.contains("https://www.metallica.com/cart/"));
+		System.out.println("User navigated to Shopping Cart Page");
 		
-		System.out.println("User is in Billing Page");
+		toClose();
+
+	}
+	
+	@Then("User check the Order Total")
+	public void user_check_the_Order_Total() {
+	    
+		String SubTotal = placeorder.subTotal.getText();
 		
-		toQuit();
+		String shipMethodInOrderSummary = shipping.shipMethodInOrderSummary.getText();
 		
+		String taxRate = placeorder.taxRate.getText();
+		
+		String OrderTotal = placeorder.totalOrder.getText();
+		
+		String Rate1 =SubTotal.substring(1);
+		String Rate2 =shipMethodInOrderSummary.substring(1);
+		String Rate3 =taxRate.substring(1);
+		String Rate4 =OrderTotal.substring(1);
+		
+		double value1 = Double.parseDouble(Rate1);//SubTotal
+        double value2 = Double.parseDouble(Rate2);//ShipMethodRate
+        double value3 = Double.parseDouble(Rate3);//TaxRate
+        double value4 = Double.parseDouble(Rate4);//OrderTotal
+        
+        double sum = value1 + value2 + value3;
+        
+        AssertJUnit.assertEquals(value4, sum);
+        System.out.println("The order total calculated correctly including tax and shipping costs.");
+        
+        toClose();		
 	}
 
+	@Then("User see the International Shipping policy message in Place Order page")
+	public void user_see_the_International_Shipping_policy_message_in_Place_Order_page() {
+	    
+		Assert.assertTrue(placeorder.intPolicyCheckBox.isDisplayed());
+		System.out.println("User see the International Shipping policy message in Place Order page");
+		
+		toClose();
+	}
 
+	@Then("User is not allowed to place the order without selecting the checkbox")
+	public void user_is_not_allowed_to_place_the_order_without_selecting_the_checkbox() {
+	    
+		Assert.assertTrue(placeorder.disabledPlaceOrderButton.isDisplayed());
+		System.out.println("User is not allowed to place the order without selecting the checkbox");
+		
+		toClose();
+	}
 
 }
