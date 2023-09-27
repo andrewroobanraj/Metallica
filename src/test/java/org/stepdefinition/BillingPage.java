@@ -69,6 +69,8 @@ public class BillingPage extends BaseClass {
 
 		btnClick(shipping.continueTobilling);
 		waitForPageToLoad(timeoutInSeconds);
+		
+		Thread.sleep(2000);
 
 		btnClick(shipping.keepOriginal);
 		waitForPageToLoad(timeoutInSeconds);
@@ -124,11 +126,13 @@ public class BillingPage extends BaseClass {
 	}
 
 	@Then("User click the Continue to billing button with Taxable address")
-	public void user_click_the_Continue_to_billing_button_with_Taxable_address() {
+	public void user_click_the_Continue_to_billing_button_with_Taxable_address() throws InterruptedException {
 
 		btnClick(shipping.continueTobilling);
 		waitForPageToLoad(timeoutInSeconds);
 
+		Thread.sleep(2000);
+		
 		btnClick(shipping.keepOriginal);
 		waitForPageToLoad(timeoutInSeconds);
 
@@ -149,11 +153,13 @@ public class BillingPage extends BaseClass {
 	}
 
 	@Then("User click the Continue to billing button with non-Taxable address")
-	public void user_click_the_Continue_to_billing_button_with_non_Taxable_address() {
+	public void user_click_the_Continue_to_billing_button_with_non_Taxable_address() throws InterruptedException {
 
 		btnClick(shipping.continueTobilling);
 		waitForPageToLoad(timeoutInSeconds);
 
+		Thread.sleep(2000);
+		
 		btnClick(billing.keepOrg2);
 		waitForPageToLoad(timeoutInSeconds);
 
@@ -205,6 +211,8 @@ public class BillingPage extends BaseClass {
 		btnClick(shipping.continueTobilling);
 		waitForPageToLoad(timeoutInSeconds);
 
+		Thread.sleep(2000);
+		
 		btnClick(shipping.keepOriginal);
 		waitForPageToLoad(timeoutInSeconds);
 

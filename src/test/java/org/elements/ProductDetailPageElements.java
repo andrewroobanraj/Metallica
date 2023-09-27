@@ -14,7 +14,7 @@ public class ProductDetailPageElements extends BaseClass {
 	}
 
 	// To select the Product
-	@FindBy(xpath = "//a[@title='Go to Product: M Logo 72 Seasons Tracks T-Shirts']")
+	@FindBy(xpath = "(//img[@class='js-blazy b-loaded'])[1]")
 	public WebElement product;
 
 	// To check the product image is displayed
@@ -34,11 +34,11 @@ public class ProductDetailPageElements extends BaseClass {
 	public WebElement quantityValue;
 
 	// To select the Product size
-	@FindBy(xpath = "(//a[@class='swatchanchor'])[2]")
+	@FindBy(xpath = "(//a[@class='swatchanchor'])[3]")
 	public WebElement productSize;
 
 	// To select the Product size
-	@FindBy(xpath = "(//a[@class='swatchanchor'])[3]")
+	@FindBy(xpath = "(//a[@class='swatchanchor'])[4]")
 	public WebElement productSize2;
 
 	// To check the Product size is selected

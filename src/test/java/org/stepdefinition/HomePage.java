@@ -95,10 +95,13 @@ public class HomePage extends BaseClass{
 		waitForPageToLoad(timeoutInSeconds);
 	    
 	    btnClick(home.homePage);
+	    scrollDownToPhotos();
 		
 		btnClick(home.photos);
 		waitForPageToLoad(timeoutInSeconds);
 	    
+		scrollDownToPhotos();
+		
 	    btnClick(home.videos);
 	    waitForPageToLoad(timeoutInSeconds);
 	    

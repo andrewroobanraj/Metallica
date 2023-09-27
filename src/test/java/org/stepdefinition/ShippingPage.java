@@ -86,6 +86,8 @@ public class ShippingPage extends BaseClass{
 		btnClick(shipping.continueTobilling);		
 		waitForPageToLoad(timeoutInSeconds);
 		
+		Thread.sleep(2000);
+		
 		AssertJUnit.assertTrue(shipping.keepOriginal.isDisplayed());
 		System.out.println("Keep Original address Popup is displayed to navigate billing page");
 		
@@ -268,6 +270,8 @@ public class ShippingPage extends BaseClass{
 		
 		btnClick(shipping.continueTobilling);
 		waitForPageToLoad(timeoutInSeconds);
+		
+		Thread.sleep(2000);
 		
 		btnClick(shipping.keepOriginal);
 		waitForPageToLoad(timeoutInSeconds);

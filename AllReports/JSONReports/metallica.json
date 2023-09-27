@@ -1,9 +1,9 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "line": 3,
+        "line": 4,
         "name": "",
         "description": "",
         "type": "background",
@@ -11,10 +11,10 @@
         "steps": [
           {
             "result": {
-              "duration": 21765415400,
+              "duration": 16197379499,
               "status": "passed"
             },
-            "line": 4,
+            "line": 5,
             "name": "User is in metallica home page",
             "match": {
               "location": "StepDefinition.user_is_in_metallica_home_page()"
@@ -24,17 +24,192 @@
         ]
       },
       {
-        "start_timestamp": "2023-09-08T11:01:29.769Z",
+        "start_timestamp": "2023-09-27T12:52:38.380Z",
         "line": 7,
-        "name": "To validate login \u0026 logout using valid userName and valid Password",
+        "name": "Validate all the links navigates to page",
         "description": "",
-        "id": "to-validate-the-functionality-of-metallica-application;to-validate-login-\u0026-logout-using-valid-username-and-valid-password",
+        "id": "to-validate-the-home-page-links-in-the-metallica-site;validate-all-the-links-navigates-to-page",
+        "after": [
+          {
+            "result": {
+              "duration": 1171099500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 11196150600,
+              "duration": 75502717800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User click the links from header/footer section",
+            "match": {
+              "location": "HomePage.user_click_the_links_from_header_footer_section()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 646381799,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user directed to the appropriate pages",
+            "match": {
+              "location": "HomePage.user_directed_to_the_appropriate_pages()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Home"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13507202401,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:54:12.044Z",
+        "line": 11,
+        "name": "Validate the icons/images/links are clickable and navigate to the right page",
+        "description": "",
+        "id": "to-validate-the-home-page-links-in-the-metallica-site;validate-the-icons/images/links-are-clickable-and-navigate-to-the-right-page",
+        "after": [
+          {
+            "result": {
+              "duration": 211016901,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 24020816599,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User click the icons/images/links",
+            "match": {
+              "location": "HomePage.user_click_the_icons_images_links()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 538508900,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "The icons/images/links are clickable and directed to the appropriate pages",
+            "match": {
+              "location": "HomePage.the_icons_images_links_are_clickable_and_directed_to_the_appropriate_pages()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Home"
+          }
+        ]
+      }
+    ],
+    "name": "To validate the Home page links in the Metallica site",
+    "description": "",
+    "id": "to-validate-the-home-page-links-in-the-metallica-site",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Featurefiles/Home.feature",
+    "tags": [
+      {
+        "name": "@Home",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13877136000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:54:50.327Z",
+        "line": 7,
+        "name": "Validate using valid credential in the login page",
+        "description": "",
+        "id": "to-validate-the-login-functionality-of-metallica-application;validate-using-valid-credential-in-the-login-page",
+        "after": [
+          {
+            "result": {
+              "duration": 312754401,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6059315900,
               "status": "passed"
             },
             "line": 8,
@@ -46,65 +221,568 @@
           },
           {
             "result": {
-              "duration": 518733100,
+              "duration": 5301304699,
               "status": "passed"
             },
             "line": 9,
-            "name": "User enter valid userName and valid Password",
+            "name": "User Enter valid email id and valid password in the login page",
             "match": {
-              "location": "Login.user_enter_valid_userName_and_valid_Password()"
+              "location": "Login.user_Enter_valid_email_id_and_valid_password_in_the_login_page()"
             },
-            "keyword": "And "
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Login"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14282899301,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:55:15.923Z",
+        "line": 17,
+        "name": "Validate using Invalid credential in the login page",
+        "description": "",
+        "id": "to-validate-the-login-functionality-of-metallica-application;validate-using-invalid-credential-in-the-login-page;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 222539100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5651347900,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User navigate to login page",
+            "match": {
+              "location": "Login.user_navigate_to_login_page()"
+            },
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 6008056600,
+              "duration": 5341362800,
               "status": "passed"
             },
-            "line": 10,
-            "name": "User click Login button",
+            "line": 13,
+            "name": "Enter invalid credentials \"Metallica1@gmail.com\" and \"metallica123\"",
             "match": {
-              "location": "Login.user_click_Login_button()"
+              "arguments": [
+                {
+                  "val": "\"Metallica1@gmail.com\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"metallica123\"",
+                  "offset": 53
+                }
+              ],
+              "location": "Login.enter_invalid_credentials_and(String,String)"
             },
-            "keyword": "And "
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Login"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14127589001,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:55:41.435Z",
+        "line": 18,
+        "name": "Validate using Invalid credential in the login page",
+        "description": "",
+        "id": "to-validate-the-login-functionality-of-metallica-application;validate-using-invalid-credential-in-the-login-page;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 212098200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5851615700,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User navigate to login page",
+            "match": {
+              "location": "Login.user_navigate_to_login_page()"
+            },
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 182744700,
+              "duration": 5278806500,
               "status": "passed"
             },
-            "line": 11,
-            "name": "User should be in a dashboard page",
+            "line": 13,
+            "name": "Enter invalid credentials \"andrewroobanraaj@gmail.com\" and \"Metallica@23\"",
             "match": {
-              "location": "Login.user_should_be_in_a_dashboard_page()"
+              "arguments": [
+                {
+                  "val": "\"andrewroobanraaj@gmail.com\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"Metallica@23\"",
+                  "offset": 59
+                }
+              ],
+              "location": "Login.enter_invalid_credentials_and(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Login"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13227568000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:56:06.911Z",
+        "line": 19,
+        "name": "Validate using Invalid credential in the login page",
+        "description": "",
+        "id": "to-validate-the-login-functionality-of-metallica-application;validate-using-invalid-credential-in-the-login-page;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 179390601,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5526950000,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User navigate to login page",
+            "match": {
+              "location": "Login.user_navigate_to_login_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4898540700,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "Enter invalid credentials \"metallicaabc@gmail.com\" and \"Metallica@2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"metallicaabc@gmail.com\"",
+                  "offset": 26
+                },
+                {
+                  "val": "\"Metallica@2\"",
+                  "offset": 55
+                }
+              ],
+              "location": "Login.enter_invalid_credentials_and(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Login"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13166185900,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:56:30.751Z",
+        "line": 21,
+        "name": "Validate user is not able to create new account using already registered email address in the login page",
+        "description": "",
+        "id": "to-validate-the-login-functionality-of-metallica-application;validate-user-is-not-able-to-create-new-account-using-already-registered-email-address-in-the-login-page",
+        "after": [
+          {
+            "result": {
+              "duration": 180437400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6332462000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "User navigate to login page",
+            "match": {
+              "location": "Login.user_navigate_to_login_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4870257000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "Click Create Account button",
+            "match": {
+              "location": "Login.click_Create_Account_button()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 11566047900,
+              "duration": 6446297901,
               "status": "passed"
             },
-            "line": 12,
-            "name": "User click Logout",
+            "line": 24,
+            "name": "User enter already existing email address in create account form and submit",
             "match": {
-              "location": "Login.user_click_Logout()"
+              "location": "Login.user_enter_already_existing_email_address_in_create_account_form_and_submit()"
             },
             "keyword": "And "
           }
         ],
         "tags": [
           {
-            "name": "@login"
+            "name": "@Login"
           }
         ]
       }
     ],
-    "name": "To validate the functionality of Metallica application",
+    "name": "To validate the Login functionality of Metallica application",
     "description": "",
-    "id": "to-validate-the-functionality-of-metallica-application",
+    "id": "to-validate-the-login-functionality-of-metallica-application",
     "keyword": "Feature",
-    "uri": "file:src/test/resources/Featurefiles/Metallica.feature",
-    "tags": []
+    "uri": "file:src/test/resources/Featurefiles/Login.feature",
+    "tags": [
+      {
+        "name": "@Login",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 13494263100,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:57:01.752Z",
+        "line": 7,
+        "name": "Validate by entering the valid details in the Registration form",
+        "description": "",
+        "id": "to-validate-the-registration-form-in-the-metallica-application;validate-by-entering-the-valid-details-in-the-registration-form",
+        "after": [
+          {
+            "result": {
+              "duration": 192481001,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9607015000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User navigate to registration page",
+            "match": {
+              "location": "RegistrationPage.user_navigate_to_registration_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6056847801,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "User entering all the required fields with valid information",
+            "match": {
+              "location": "RegistrationPage.user_entering_all_the_required_fields_with_valid_information()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 15610111700,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enter invalid values in the fields",
+            "match": {
+              "location": "RegistrationPage.user_enter_invalid_values_in_the_fields()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 326008500,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "The error message is displayed to enter valid information",
+            "match": {
+              "location": "RegistrationPage.the_error_message_is_displayed_to_enter_valid_information()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Registration"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 14017360200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is in metallica home page",
+            "match": {
+              "location": "StepDefinition.user_is_in_metallica_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-09-27T12:57:47.048Z",
+        "line": 13,
+        "name": "Validate the mandatory fields in the registration form",
+        "description": "",
+        "id": "to-validate-the-registration-form-in-the-metallica-application;validate-the-mandatory-fields-in-the-registration-form",
+        "after": [
+          {
+            "result": {
+              "duration": 180682900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "MyHooks.afterScenario(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10323757200,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User navigate to registration page",
+            "match": {
+              "location": "RegistrationPage.user_navigate_to_registration_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 424464300,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User click apply button without enter values in mandatory fields",
+            "match": {
+              "location": "RegistrationPage.user_click_apply_button_without_enter_values_in_mandatory_fields()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 667323300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "Error message is displayed to fill the mandatory fields",
+            "match": {
+              "location": "RegistrationPage.error_message_is_displayed_to_fill_the_mandatory_fields()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Registration"
+          }
+        ]
+      }
+    ],
+    "name": "To validate the Registration form in the Metallica application",
+    "description": "",
+    "id": "to-validate-the-registration-form-in-the-metallica-application",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Featurefiles/Registration.feature",
+    "tags": [
+      {
+        "name": "@Registration",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]

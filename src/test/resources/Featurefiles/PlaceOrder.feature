@@ -10,8 +10,8 @@ Feature: To validate the fields in Place Order page
 		And  User check the Use this address for billing checkbox is selected
 		And  User navigate to Place Order page
 		Then User check the shipping and billing address in the Place Order page
-		
-	Scenario:  Validate on clicking the "Edit cart" button from the palce order page
+	
+	Scenario: Validate on clicking the "Edit cart" button from the palce order page
 		When User Add an product to cart page
 		And  User checkout from cart
 		And  User navigate to Place Order page
@@ -22,15 +22,15 @@ Feature: To validate the fields in Place Order page
 		And  User checkout from cart
 		And  User navigate to Place Order page
 		Then User check the Order Total
-		
-	Scenario: Validate the International Shipping policy message is displayed for International addresses
+	
+	Scenario: Validate whether the International Shipping policy message is displayed for International addresses
 		When User Add an product to cart page
 		And  User checkout from cart
 		And  User select the International Shipping Address
 		And  User navigate to Place Order page
 		Then User see the International Shipping policy message in Place Order page
 	
-	Scenario: Validate the Customer is not allowed to place the order without selecting the checkbox
+	Scenario: Validate whether the Customer is not allowed to place theorder without selecting the checkbox
 		When User Add an product to cart page
 		And  User checkout from cart
 		And  User select the International Shipping Address

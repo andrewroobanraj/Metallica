@@ -85,6 +85,8 @@ public class PlaceOrderPage extends BaseClass{
 		btnClick(shipping.continueTobilling);
 		waitForPageToLoad(timeoutInSeconds);
 		
+		Thread.sleep(2000);
+		
 		btnClick(shipping.keepOriginal);
 		waitForPageToLoad(timeoutInSeconds);
 		

@@ -22,7 +22,7 @@ Feature: To validate the fields in Billing page
 		And  User Checkout from cart page
 		Then User enter non-Taxable state address
 		And  User click the Continue to billing button with non-Taxable address
-	@unit	
+	
 	Scenario: Validate by clicking the review order button
 		When User Add an product to cart
 		And  User Checkout from cart page
@@ -43,11 +43,4 @@ Feature: To validate the fields in Billing page
 		And  User enter card details
 		Then User navigated to place order page without Policy message
 			
-	
-	
-	
-	
-	
-	
-	
 	

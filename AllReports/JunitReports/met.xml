@@ -1,11 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="51.433683">
-<testcase classname="To validate the functionality of Metallica application" name="To validate login &amp; logout using valid userName and valid Password" time="51.433683">
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="9" time="334.264627">
+<testcase classname="To validate the Home page links in the Metallica site" name="Validate all the links navigates to page" time="93.661">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User click the links from header/footer section........................passed
+Then user directed to the appropriate pages.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Home page links in the Metallica site" name="Validate the icons/images/links are clickable and navigate to the right page" time="38.281182">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User click the icons/images/links......................................passed
+Then The icons/images/links are clickable and directed to the appropriate pages.passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Login functionality of Metallica application" name="Validate using valid credential in the login page" time="25.587252">
 <system-out><![CDATA[Given User is in metallica home page........................................passed
 When User navigate to login page............................................passed
-And User enter valid userName and valid Password............................passed
-And User click Login button.................................................passed
-Then User should be in a dashboard page.....................................passed
-And User click Logout.......................................................passed
+Then User Enter valid email id and valid password in the login page.........passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Login functionality of Metallica application" name="Validate using Invalid credential in the login page" time="25.50991">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to login page............................................passed
+Then Enter invalid credentials "Metallica1@gmail.com" and "metallica123"....passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Login functionality of Metallica application" name="Validate using Invalid credential in the login page 2" time="25.474846">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to login page............................................passed
+Then Enter invalid credentials "andrewroobanraaj@gmail.com" and "Metallica@23".passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Login functionality of Metallica application" name="Validate using Invalid credential in the login page 3" time="23.838848">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to login page............................................passed
+Then Enter invalid credentials "metallicaabc@gmail.com" and "Metallica@2"...passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Login functionality of Metallica application" name="Validate user is not able to create new account using already registered email address in the login page" time="30.998928">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to login page............................................passed
+Then Click Create Account button............................................passed
+And User enter already existing email address in create account form and submit.passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Registration form in the Metallica application" name="Validate by entering the valid details in the Registration form" time="45.293393">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to registration page.....................................passed
+And User entering all the required fields with valid information............passed
+Then User enter invalid values in the fields................................passed
+And The error message is displayed to enter valid information...............passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the Registration form in the Metallica application" name="Validate the mandatory fields in the registration form" time="25.619268">
+<system-out><![CDATA[Given User is in metallica home page........................................passed
+When User navigate to registration page.....................................passed
+And User click apply button without enter values in mandatory fields........passed
+Then Error message is displayed to fill the mandatory fields................passed
 ]]></system-out>
 </testcase>
 </testsuite>

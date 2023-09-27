@@ -50,9 +50,9 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                6,
-                0,
-                0,
+                170,
+                19,
+                26,
                 0,
                 0
             ],
@@ -93,7 +93,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 6) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 215) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -106,8 +106,8 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                1,
-                0
+                30,
+                19
             ],
             backgroundColor: [
                 "#00B000",
@@ -140,7 +140,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 1) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 49) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -153,8 +153,8 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                   1,
-                   0
+                   3,
+                   7
                ],
                backgroundColor: [
                 "#00B000",
@@ -187,7 +187,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 1) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 10) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -228,7 +228,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>METALLICA APPLICATION</td>
-      <td>08 Sep 2023, 16:32</td>
+      <td>26 Sep 2023, 18:48</td>
     </tr>
   </tbody>
 </table>
@@ -337,54 +337,207 @@ $(document).ready(function() {
 
   <tbody>
       <tr>
-        <td class="tagname"><a href="report-feature_2592739449.html">To validate the functionality of Metallica application</a></td>
+        <td class="tagname"><a href="report-feature_1968136146.html">To validate the fields in Billing page</a></td>
 
-        <td      class="passed"    >6</td>
+        <td      class="passed"    >30</td>
+        <td      class="failed"    >2</td>
+        <td     class="skipped"   >1</td>
         <td >0</td>
         <td >0</td>
+        <td class="total">33</td>
+
+        <td  class="passed"    >4</td>
+        <td  class="failed"    >2</td>
+        <td class="total">6</td>
+
+        <td class="duration" data-value="396590046600">6:36.590</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_1_3335370421.html">To validate the fields in the Category Browser Page</a></td>
+
+        <td      class="passed"    >16</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">16</td>
+
+        <td  class="passed"    >4</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td class="duration" data-value="153169899700">2:33.169</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_2_3925628310.html">To validate the Home page links in the Metallica site</a></td>
+
+        <td      class="passed"    >4</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
         <td >0</td>
         <td >0</td>
         <td class="total">6</td>
 
         <td  class="passed"    >1</td>
+        <td  class="failed"    >1</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="150154467000">2:30.154</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_3_4125848256.html">To validate the Login functionality of Metallica application</a></td>
+
+        <td      class="passed"    >16</td>
         <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">16</td>
+
+        <td  class="passed"    >5</td>
+        <td >0</td>
+        <td class="total">5</td>
+
+        <td class="duration" data-value="183183119400">3:3.183</td>
+        <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_4_1180892728.html">To Validate the My Account Page in the Metallica application</a></td>
+
+        <td      class="passed"    >2</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">4</td>
+
+        <td >0</td>
+        <td  class="failed"    >1</td>
         <td class="total">1</td>
 
-        <td class="duration" data-value="51237148300">51.237</td>
+        <td class="duration" data-value="57213475000">57.213</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_5_2347777854.html">To validate the fields in Place Order page</a></td>
+
+        <td      class="passed"    >26</td>
+        <td      class="failed"    >1</td>
+        <td     class="skipped"   >1</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">28</td>
+
+        <td  class="passed"    >4</td>
+        <td  class="failed"    >1</td>
+        <td class="total">5</td>
+
+        <td class="duration" data-value="331929714700">5:31.929</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_6_1334161015.html">To validate the fields in Product Detail page</a></td>
+
+        <td      class="passed"    >15</td>
+        <td      class="failed"    >5</td>
+        <td     class="skipped"   >4</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">24</td>
+
+        <td  class="passed"    >1</td>
+        <td  class="failed"    >5</td>
+        <td class="total">6</td>
+
+        <td class="duration" data-value="199528736100">3:19.528</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_7_60497776.html">To validate the Registration form in the Metallica application</a></td>
+
+        <td      class="passed"    >9</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">9</td>
+
+        <td  class="passed"    >2</td>
+        <td >0</td>
+        <td class="total">2</td>
+
+        <td class="duration" data-value="107594316000">1:47.594</td>
         <td class="passed">Passed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_8_1777477477.html">To validate the fields in Shipping page</a></td>
+
+        <td      class="passed"    >45</td>
+        <td      class="failed"    >2</td>
+        <td >0</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">47</td>
+
+        <td  class="passed"    >9</td>
+        <td  class="failed"    >2</td>
+        <td class="total">11</td>
+
+        <td class="duration" data-value="629183385800">10:29.183</td>
+        <td class="failed">Failed</td>
+      </tr>
+      <tr>
+        <td class="tagname"><a href="report-feature_9_3039093023.html">To validate the fields in Shopping cart page</a></td>
+
+        <td      class="passed"    >7</td>
+        <td      class="failed"    >7</td>
+        <td     class="skipped"   >18</td>
+        <td >0</td>
+        <td >0</td>
+        <td class="total">32</td>
+
+        <td >0</td>
+        <td  class="failed"    >7</td>
+        <td class="total">7</td>
+
+        <td class="duration" data-value="274893850100">4:34.893</td>
+        <td class="failed">Failed</td>
       </tr>
   </tbody>
 
   <tfoot class="total">
     <tr>
       <td></td>
-      <td>6</td>
+      <td>170</td>
+      <td>19</td>
+      <td>26</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>6</td>
+      <td>215</td>
 
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
+      <td>30</td>
+      <td>19</td>
+      <td>49</td>
 
-      <td class="duration">51.237</td>
-      <td>1</td>
+      <td class="duration">41:23.441</td>
+      <td>10</td>
     </tr>
     <tr>
       <td></td>
-      <td>100.00%</td>
-      <td>0.00%</td>
-      <td>0.00%</td>
+      <td>79.07%</td>
+      <td>8.84%</td>
+      <td>12.09%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
-      <td>100.00%</td>
-      <td>0.00%</td>
+      <td>61.22%</td>
+      <td>38.78%</td>
       <td></td>
       <td></td>
-      <td>100.00%</td>
+      <td>30.00%</td>
     </tr>
   </tfoot>
 </table>

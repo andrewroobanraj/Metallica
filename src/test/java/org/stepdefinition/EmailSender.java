@@ -40,17 +40,17 @@ public class EmailSender {
 			multipart.addBodyPart(messageBodyPart);
 
 			messageBodyPart = new MimeBodyPart();
-			String filename = "C:\\Users\\UTIS LAPTOP 35\\eclipse-workspace\\Selenium\\Metallica\\AllReports\\JVMReport\\cucumber-html-reports\\overview-tags.html";
+			String filename = "C:\\Users\\UTIS LAPTOP 35\\eclipse-workspace\\Selenium\\Metallica\\Excel\\Met_Regression_Automation.xlsx";
 			DataSource source = new FileDataSource(filename);
 			messageBodyPart.setDataHandler(new DataHandler(source));
-			messageBodyPart.setFileName("Regression report.html");
+			messageBodyPart.setFileName("Met_Regression_Automation.xlsx");
 			multipart.addBodyPart(messageBodyPart);
 
 			message.setContent(multipart);
 
 			Transport.send(message);
 
-			System.out.println("Email sent successfully!");
+			System.out.println("Email Sent Successfully!");
 
 		} catch (MessagingException e) {
 			throw new RuntimeException(e);

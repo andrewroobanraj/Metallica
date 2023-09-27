@@ -9,8 +9,8 @@ Feature: To validate the fields in the Category Browser Page
 		And  User see the Product tile with product image and price
 		And  User click the product image
 		Then user see the product badge in single line
-		
-	Scenario: Validate the Filters in the left panel
+	
+	Scenario: Verify by selecting the Filters in the left panel
 		When User navigate to Met Store
 		Then User apply the filters in the left panel
 		

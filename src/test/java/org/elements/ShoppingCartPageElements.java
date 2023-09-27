@@ -19,7 +19,7 @@ public class ShoppingCartPageElements extends BaseClass{
 	public WebElement closeCart;
 
 	//To select the product
-	@FindBy(xpath="//a[@title='Go to Product: Band 72 Seasons Tracks T-Shirt']")
+	@FindBy(xpath="(//img[@class='js-blazy b-loaded'])[2]")
 	public WebElement secondProduct;
 
 	//To select the product size
@@ -71,11 +71,11 @@ public class ShoppingCartPageElements extends BaseClass{
 	public WebElement subTotal;
 	
 	//To check the product in cart page
-	@FindBy(xpath="(//a[@title='Go to Product: M Logo 72 Seasons Tracks T-Shirts - Medium'])[4]")
+	@FindBy(xpath="(//div[@class='item-image'])[1]")
 	public WebElement product1Cart;
 	
 	//To check the second product in cart page
-	@FindBy(xpath="(//a[@title='Go to Product: Band 72 Seasons Tracks T-Shirt - Medium'])[4]")
+	@FindBy(xpath="(//div[@class='item-image'])[2]")
 	public WebElement product2Cart;
 	
 	//To check the cart quantity
@@ -85,4 +85,8 @@ public class ShoppingCartPageElements extends BaseClass{
 	//To check the shopping cart is Empty
 	@FindBy(xpath="//h3[text()='Your Shopping Cart is Empty']")
 	public WebElement cartEmpty;
+	
+	//Click product link in cart
+	@FindBy(xpath="(//a[@title='Go to Product: Metal Up Your Xmass Holiday Sweater - Medium'])[4]")
+	public WebElement productLink;
 }

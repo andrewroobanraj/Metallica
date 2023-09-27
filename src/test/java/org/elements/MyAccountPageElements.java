@@ -3,6 +3,7 @@ package org.elements;
 import java.io.File;
 
 import org.base.BaseClass;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -118,13 +119,14 @@ public class MyAccountPageElements extends BaseClass {
 
 		String filePath = "C:\\Users\\UTIS LAPTOP 35\\Downloads\\Metallica_Andrew_Rooban Raj.json";
 		File file = new File(filePath);
-
-		if (file.exists()) {
-			System.out.println("Data File downloaded successfully.");
-		} else {
-			System.out.println("Data File download failed.");
-		}
+		
+		Assert.assertTrue(file.exists());
 
 	}
+	
+	//Address page
+	@FindBy(xpath="(//ul[@class='address-group'])[2]")
+	public WebElement addressPage;
+	
 
 }

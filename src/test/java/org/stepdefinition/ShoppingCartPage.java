@@ -131,11 +131,11 @@ public class ShoppingCartPage extends BaseClass {
 	@Then("User click the product link")
 	public void user_click_the_product_link() {
 		
-		btnClick(shopping.product1Cart);
+		btnClick(shopping.productLink);
 		waitForPageToLoad(timeoutInSeconds);
 		
 		String url = driver.getCurrentUrl();
-		Assert.assertTrue(url.contains("https://www.metallica.com/store/m-logo-72-seasons-tracks-t-shirts/M72TITLES.html?cgid=store"));
+		Assert.assertTrue(url.contains("https://www.metallica.com/store/metal-up-your-xmass-holiday-sweater/MUYXMASSWTR.html?cgid=store"));
 		System.out.println("User is navigated to PDP from cart page");
 		
 		toClose();

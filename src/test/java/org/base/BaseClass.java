@@ -154,6 +154,13 @@ public class BaseClass {
         jsExecutor.executeScript("window.scrollTo(0,0)");
 	}
 	
+	public void scrollDownToPhotos() {
+		
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0,2500)");
+		
+	}
+	
 	public void scrollToProducts() {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollTo(0, 750)");
